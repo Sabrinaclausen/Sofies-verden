@@ -17,6 +17,7 @@ html, body {
   overflow: hidden;
   background: #111;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 
 #root {
@@ -31,14 +32,14 @@ html, body {
 }
 
 button {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'fredoka', sans-serif;
   cursor: pointer;
   border: none;
   outline: none;
 }
 
 input {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'fredoka', sans-serif;
   outline: none;
 }
 
