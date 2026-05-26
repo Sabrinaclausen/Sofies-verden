@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../AppContext';
+import gameCenterIcon from '../assets/gamecenter.png';
+import GyldendalLogo from '../assets/gyldendal-logo.png';
 
 // phases: 'in' → slide down, 'visible' → pause, 'out' → slide up, 'done' → content appears
 export default function LoginScreen() {
@@ -23,42 +25,34 @@ export default function LoginScreen() {
   return (
     <div className="absolute inset-0 bg-[#F2F2F2] overflow-hidden flex flex-col items-center justify-between py-5">
 
-      {/* Game Center button — the notification itself, sliding in from top */}
+      {/* Game Center knap — notification */}
       {phase !== 'done' && (
-        <div className="absolute top-4 left-4 right-4 z-50" style={notifAnim}>
+        <div className="absolute top-4 left-4 right-4 z-50 flex justify-center" style={notifAnim}>
           <button
-            className="w-full flex items-center gap-2 bg-white rounded-3xl px-5 py-2.5"
+            className="w-60 flex items-center gap-2 bg-white rounded-3xl px-5 py-2.5"
             style={{ border: '1px solid #E0E0E0', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
           >
-            <GameCenterIcon />
-            <span className="text-sm font-semibold text-[#333]" style={{ fontFamily: 'Nunito, sans-serif' }}>
+            <img src={gameCenterIcon} alt="Game Center" style={{ width: 28, height: 28 }} />
+            <span className="text-sm font-semibold text-[#333]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
               Log ind på Game Center
             </span>
           </button>
         </div>
       )}
 
-      {/* Top spacer — reserves the space the notification occupied */}
+
       <div className="h-16 w-full flex-shrink-0" />
 
-      {/* Gyldendal logo — floats down into place, then continuously bobs */}
-      <div
+      {/* Gyldendal logo */}
+    <div
         className="flex flex-col items-center gap-4"
-        style={{ animation: 'logoFloat 3s ease-in-out infinite' }}
-      >
-        <div
-          className="w-[120px] h-[130px] rounded-[22px] bg-white flex items-center justify-center"
-          style={{ border: '2.5px solid #1A1A1A' }}
-        >
-          <HeronSVG />
-        </div>
-        <p
-          className="text-[26px] font-black tracking-[3px] text-[#1A1A1A]"
-          style={{ fontFamily: 'Georgia, serif' }}
-        >
-          GYLDENDAL
-        </p>
+        style={{ animation: 'logoFloat 3s ease-in-out infinite' }}>
+      <div
+        className="w-[120px] h-[130px] rounded-[22px] bg-white flex items-center justify-center"
+        style={{ border: '2.5px solid #1A1A1A' }}>
+          <Gyldendal-logo />
       </div>
+    </div>
 
       {/* Forsæt button — always visible */}
       <div className="w-full px-8">

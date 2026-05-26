@@ -1,21 +1,21 @@
 import React from 'react';
-import { AppProvider, useApp } from './AppContext';
+import { AppProvider, useApp } from './AppContext.jsx';
 
-import LoginScreen from './screens/LoginScreen';
-import StartsideScreen from './screens/StartsideScreen';
-import CharacterSelectScreen from './screens/CharacterSelectScreen';
-import ChaptersScreen from './screens/ChaptersScreen';
-import MapScreen from './screens/MapScreen';
-import LessonScreen from './screens/LessonScreen';
-import QuizScreen from './screens/QuizScreen';
-import CompletionScreen from './screens/CompletionScreen';
-import HjemScreen from './screens/HjemScreen';
-import ScoreboardScreen from './screens/ScoreboardScreen';
-import VennerScreen from './screens/VennerScreen';
-import InviterScreen from './screens/InviterScreen.js';
-import RequestsScreen from './screens/RequestsScreen';
-import BadgesScreen from './screens/BadgesScreen';
-import IndstillingerScreen from './screens/IndstillingerScreen';
+import LoginScreen from './screens/LoginScreen.jsx';
+import StartsideScreen from './screens/StartsideScreen.jsx';
+import CharacterSelectScreen from './screens/CharacterSelectScreen.jsx';
+import ChaptersScreen from './screens/ChaptersScreen.jsx';
+import MapScreen from './screens/MapScreen.jsx';
+import LessonScreen from './screens/LessonScreen.jsx';
+import QuizScreen from './screens/QuizScreen.jsx';
+import CompletionScreen from './screens/CompletionScreen.jsx';
+import HjemScreen from './screens/HjemScreen.jsx';
+import ScoreboardScreen from './screens/ScoreboardScreen.jsx';
+import VennerScreen from './screens/VennerScreen.jsx';
+import InviterScreen from './screens/InviterScreen.jsx';
+import RequestsScreen from './screens/RequestsScreen.jsx';
+import BadgesScreen from './screens/BadgesScreen.jsx';
+import IndstillingerScreen from './screens/IndstillingerScreen.jsx';
 
 const SCREENS = {
   login: LoginScreen,
