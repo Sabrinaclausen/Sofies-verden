@@ -1,5 +1,15 @@
 import React from 'react';
 import { useApp } from '../AppContext';
+import stjerneBaggrund from '../assets/stjerne-baggrund.png';
+import avatarDog from '../assets/avatar-hund.png';
+import avatarGingerbread from '../assets/avatar-gingerbread.png';
+import avatarOwl from '../assets/avatar-owl.png';
+import avatarCaveman from '../assets/avatar-caveman.png';
+import avatarHorse from '../assets/avatar-hest.png';
+import avatarCompass from '../assets/avatar-kompas.png';
+import iconHome from '../assets/ikon-hus.png';
+import iconGear from '../assets/ikon-indstillinger.png';
+import iconProfil from '../assets/ikon-profil.png';
 
 export const C = {
   bg: '#0D0B2B',
@@ -16,12 +26,13 @@ export function TopBar({ rightIcon, onRight }) {
   const { navigate, state } = useApp();
   const handleRight = onRight || (() => navigate('hjem'));
   const RightIcon = rightIcon === 'gear'
-    ? () => <GearIcon size={22} color="white" />
-    : () => <PersonIcon size={22} color="white" />;
-  return (
+    ? () => <GearIcon size={28} />
+    : () => <PersonIcon size={28} />;
+  
+    return (
     <div className="flex items-center justify-between px-5 pt-3 pb-2 z-10 flex-shrink-0 relative">
       <button onClick={() => navigate('chapters')} className="bg-transparent p-1">
-        <HouseIcon size={24} color="white" />
+        <HomeIcon size={28} />
       </button>
       <span className="text-brand-accent font-extrabold text-sm tracking-wide">{state.username}</span>
       <button onClick={handleRight} className="bg-transparent p-1">
@@ -34,26 +45,25 @@ export function TopBar({ rightIcon, onRight }) {
 export function BottomNav({ active }) {
   const { navigate } = useApp();
   const items = [
-    { id: 'hjem', label: 'Hjem', icon: (a) => <HouseIcon size={26} color={a ? '#1A1600' : 'white'} /> },
-    { id: 'scoreboard', label: 'Board', icon: (a) => <BarChartIcon size={26} color={a ? '#1A1600' : 'white'} /> },
-    { id: 'venner', label: 'Venner', icon: (a) => <PeopleIcon size={26} color={a ? '#1A1600' : 'white'} /> },
+    { id: 'hjem', label: 'Hjem', icon: (a) => <HouseIcon size={45} color={a ? '#1A1600' : '#F0EAFF'} /> },
+    { id: 'scoreboard', label: 'Board', icon: (a) => <BarChartIcon size={45} color={a ? '#1A1600' : '#F0EAFF'} /> },
+    { id: 'venner', label: 'Venner', icon: (a) => <PeopleIcon size={45} color={a ? '#1A1600' : '#F0EAFF'} /> },
   ];
   return (
-    <div className="flex justify-around items-center px-4 pt-2 pb-4 bg-brand-bg flex-shrink-0 border-t border-white/5">
+    <div className="flex justify-around items-center px-4 pt-2 pb-4 flex-shrink-0 ">
       {items.map((item) => {
         const isActive = active === item.id;
         return (
           <button
             key={item.id}
             onClick={() => navigate(item.id)}
-            className={`flex flex-col items-center gap-1 rounded-2xl px-5 py-2 min-w-[90px] transition-all ${
-              isActive
-                ? 'bg-brand-accent border-0'
-                : 'bg-white/[0.08] border border-white/10'
+            className={`flex flex-col items-center gap-1 rounded-2xl px-5 py-2 my-8 min-w-[115px] transition-all ${
+              isActive ? 'bg-brand-accent' : 'bg-white/[0.08]'
             }`}
+            style={isActive ? {} : { border: '2px solid #F5C842' }}
           >
             {item.icon(isActive)}
-            <span className={`text-xs font-bold ${isActive ? 'text-brand-dark' : 'text-brand-sub'}`}>
+            <span className={`text-base "Open sans" ${isActive ? 'text-brand-dark' : 'text-brand-sub'}`}>
               {item.label}
             </span>
           </button>
@@ -65,8 +75,16 @@ export function BottomNav({ active }) {
 
 export function StarsWrapper({ children, style }) {
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', background: C.bg, overflow: 'hidden', ...style }}>
-      <StarField />
+    <div style={{ 
+      position: 'relative', 
+      width: '100%', 
+      height: '100%', 
+      backgroundImage: `url(${stjerneBaggrund})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      overflow: 'hidden', 
+      ...style 
+    }}>
       <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
         {children}
       </div>
@@ -162,36 +180,27 @@ export function MountainScene({ fullscreen = false }) {
 }
 
 export function CharacterEmoji({ id, size = 60 }) {
-  const map = { dog: '🐶', gingerbread: '🍪', owl: '🦉', caveboy: '🧒', unicorn: '🦄', compass: '🧭' };
-  return <span style={{ fontSize: size, lineHeight: 1 }}>{map[id] || '🐶'}</span>;
+  const map = { 
+    dog: avatarDog, 
+    gingerbread: avatarGingerbread, 
+    owl: avatarOwl, 
+    caveboy: avatarCaveman, 
+    horse: avatarHorse, 
+    compass: avatarCompass 
+  };
+  return <img src={map[id] || avatarDog} alt={id} style={{ width: size, height: size, objectFit: 'contain' }} />;
 }
 
-export function HouseIcon({ size = 24, color = 'white' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-      <path d="M3 12L12 4L21 12V20C21 20.55 20.55 21 20 21H15V16H9V21H4C3.45 21 3 20.55 3 20V12Z"
-            stroke={color} strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-    </svg>
-  );
+export function HomeIcon({ size = 24 }) {
+  return <img src={iconHome} alt="Hjem" style={{ width: size, height: size, objectFit: 'contain' }} />;
 }
 
-export function GearIcon({ size = 22, color = 'white' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="3" stroke={color} strokeWidth="2" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-            stroke={color} strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
+export function GearIcon({ size = 22 }) {
+  return <img src={iconGear} alt="Indstillinger" style={{ width: size, height: size, objectFit: 'contain' }} />;
 }
 
-export function PersonIcon({ size = 22, color = 'white' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="8" r="4" stroke={color} strokeWidth="2" />
-      <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke={color} strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
+export function PersonIcon({ size = 22 }) {
+  return <img src={iconProfil} alt="Profil" style={{ width: size, height: size, objectFit: 'contain' }} />;
 }
 
 export function BarChartIcon({ size = 26, color = 'white' }) {
@@ -200,6 +209,15 @@ export function BarChartIcon({ size = 26, color = 'white' }) {
       <rect x="3" y="12" width="4" height="9" rx="1" stroke={color} strokeWidth="2" />
       <rect x="10" y="7" width="4" height="14" rx="1" stroke={color} strokeWidth="2" />
       <rect x="17" y="3" width="4" height="18" rx="1" stroke={color} strokeWidth="2" />
+    </svg>
+  );
+}
+
+export function HouseIcon({ size = 24, color = 'white' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path d="M3 12L12 4L21 12V20C21 20.55 20.55 21 20 21H15V16H9V21H4C3.45 21 3 20.55 3 20V12Z"
+            stroke={color} strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
     </svg>
   );
 }
@@ -215,20 +233,21 @@ export function PeopleIcon({ size = 26, color = 'white' }) {
   );
 }
 
-export function PencilIcon({ size = 16, color = 'white' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 export function SearchIcon({ size = 18, color = '#C4BFEF' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <circle cx="11" cy="11" r="7" stroke={color} strokeWidth="2" />
       <path d="M21 21l-4.35-4.35" stroke={color} strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function PencilIcon({ size = 16, color = 'white' }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
+      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke={color} strokeWidth="2" strokeLinecap="round" />
+      <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
