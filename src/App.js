@@ -12,7 +12,7 @@ import CompletionScreen from './screens/CompletionScreen';
 import HjemScreen from './screens/HjemScreen';
 import ScoreboardScreen from './screens/ScoreboardScreen';
 import VennerScreen from './screens/VennerScreen';
-import InviterScreen from './screens/InviterScreen';
+import InviterScreen from './screens/InviterScreen.js';
 import RequestsScreen from './screens/RequestsScreen';
 import BadgesScreen from './screens/BadgesScreen';
 import IndstillingerScreen from './screens/IndstillingerScreen';
