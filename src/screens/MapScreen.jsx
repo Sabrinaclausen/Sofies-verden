@@ -13,17 +13,17 @@ import levelSyv  from '../assets/level-syv.png';
 const LEVEL_IMAGES = [levelEt, levelTo, levelTre, levelFire, levelFem, levelSeks, levelSyv];
 
 const NODES = [
-  { n: 1, cx: 242, cy: 105 },
-  { n: 2, cx: 270, cy: 148 },
-  { n: 3, cx: 178, cy: 195 },
-  { n: 4, cx: 268, cy: 248 },
-  { n: 5, cx: 175, cy: 308 },
-  { n: 6, cx: 245, cy: 368 },
-  { n: 7, cx: 210, cy: 440 },
+  { n: 1, cx: 225, cy: 251 },
+  { n: 2, cx: 265, cy: 301 },
+  { n: 3, cx: 145, cy: 298 },
+  { n: 4, cx: 271, cy: 385 },
+  { n: 5, cx: 150, cy: 405 },
+  { n: 6, cx: 233, cy: 450 },
+  { n: 7, cx: 167, cy: 509 },
 ];
 
-const NODE_W = 64;
-const NODE_H = 44;
+const NODE_W = 50;
+const NODE_H = 30;
 
 export default function MapScreen() {
   const { navigate, updateState, state } = useApp();
@@ -95,10 +95,10 @@ export default function MapScreen() {
               {/* Result indicator below the node */}
               {hasResult && (
                 <text
-                  x={cx} y={y + NODE_H + 13}
+                  x={cx} y={y + NODE_H + 1}
                   textAnchor="middle" dominantBaseline="middle"
-                  fill={isCorrect ? '#22C55E' : '#EF4444'}
-                  fontSize="14" fontWeight="900" fontFamily="Nunito, sans-serif"
+                  fill={isCorrect ? '#33BD55' : '#B22A2A'}
+                  fontSize="19" fontWeight="900" fontFamily="fredoka, sans-serif"
                 >
                   {isCorrect ? '✓' : '✗'}
                 </text>

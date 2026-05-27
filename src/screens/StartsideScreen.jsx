@@ -3,6 +3,7 @@ import { useApp } from '../AppContext';
 import hundeAvatar from '../assets/avatar-hund.png';
 import cirkelLilla from '../assets/cirkel-lilla.png';
 import stjerneBaggrund from '../assets/stjerne-baggrund.png';
+import { CharacterEmoji } from '../components/shared';
 
 export default function StartsideScreen() {
   const { navigate, state, openCharacterSelect } = useApp();
@@ -43,14 +44,9 @@ export default function StartsideScreen() {
     </button>
 
     {/* Hund */}
-    <img 
-      src={hundeAvatar} 
-      alt="Avatar" 
-      style={{  
-        position: 'absolute',
-        pointerEvents: 'none'
-      }} 
-    />
+    <div style={{ position: 'absolute', pointerEvents: 'none' }}>
+      <CharacterEmoji id={state.selectedCharacter} size={130} />
+    </div>
   </div>
 
         {/* Play knap */}

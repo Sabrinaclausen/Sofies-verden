@@ -1,3 +1,10 @@
+import avatarDog from './assets/avatar-hund.png';
+import avatarGingerbread from './assets/avatar-gingerbread.png';
+import avatarOwl from './assets/avatar-owl.png';
+import avatarCaveman from './assets/avatar-caveman.png';
+import avatarHorse from './assets/avatar-hest.png';
+import avatarCompass from './assets/avatar-kompas.png';
+
 export const LESSON_LEVELS = [
   {
     level: 1,
@@ -136,12 +143,12 @@ export const QUIZ_QUESTIONS = [
 ];
 
 export const CHARACTERS = [
-  { id: 'dog', label: 'Hund', emoji: '🐶' },
-  { id: 'gingerbread', label: 'Peberkage', emoji: '🍪' },
-  { id: 'owl', label: 'Ugle', emoji: '🦉' },
-  { id: 'caveboy', label: 'Huleboer', emoji: '🧒' },
-  { id: 'unicorn', label: 'Enhjørning', emoji: '🦄' },
-  { id: 'compass', label: 'Kompas', emoji: '🧭' },
+  { id: 'dog', image: avatarDog },
+  { id: 'gingerbread', image: avatarGingerbread },
+  { id: 'owl', image: avatarOwl },
+  { id: 'caveboy', image: avatarCaveman },
+  { id: 'horse', image: avatarHorse },
+  { id: 'compass', image: avatarCompass },
 ];
 
 export const CHAPTERS = [

@@ -31,10 +31,7 @@ export default function CharacterSelectScreen() {
                   boxShadow: isSelected ? `0 0 0 1px ${C.accent}` : 'none',
                 }}
               >
-                <span className="text-5xl leading-none">{ch.emoji}</span>
-                <span className={`text-xs font-bold ${isSelected ? 'text-brand-accent' : 'text-brand-sub'}`}>
-                  {ch.label}
-                </span>
+                <img src={ch.image} alt={ch.id} style={{ objectFit: 'contain' }} />
               </button>
             );
           })}

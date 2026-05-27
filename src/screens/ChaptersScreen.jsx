@@ -4,54 +4,45 @@ import { StarsWrapper, TopBar, C } from '../components/shared';
 import { CHAPTERS } from '../data';
 import sofieImg from '../assets/sofie-startside.png';
 import sofieSmallImg from '../assets/sofie-startside-to.png';
+import kapitelGrotte from '../assets/kapitel-grotte.png';
+import kapitelAkademi from '../assets/kapitel-akademi.png';
+import kapitelDetEvige from '../assets/kapitel-detevige.png';
+import kapitelIdeernesVerden from '../assets/kapitel-ideernesverden.png';
+import kapitelUdodelig from '../assets/kapitel-udodelig.png';
+import kapitelSikkerViden from '../assets/kapitel-sikkerviden.png';
+import kapitelFilosofistaten from '../assets/kapitel-filosofistaten.png';
+import sofieVinkerImg from '../assets/sofie-vinker.png';
 
 const GIRL_SPEECH = 'Hej! Jeg er Sofie. Lad os lære om Platons hulelignelse! Klik på det første kapitel for at begynde vores rejse.';
 
-const ChapterCard = ({ chapter, onClick }) => {
-  const gradients = {
-    cave:      'linear-gradient(160deg, #0D1B3E 0%, #1A3560 50%, #0A2040 100%)',
-    akademi:   'linear-gradient(160deg, #1A3A1A 0%, #2D6B2D 50%, #1A4A2A 100%)',
-    eternal:   'linear-gradient(160deg, #3A2A0A 0%, #6A4A10 50%, #4A3010 100%)',
-    ideas:     'linear-gradient(160deg, #0A2A3A 0%, #1A4A6A 50%, #0A3050 100%)',
-    soul:      'linear-gradient(160deg, #2A0A3A 0%, #4A1A6A 50%, #2A0A50 100%)',
-    knowledge: 'linear-gradient(160deg, #1A2A0A 0%, #2A4A10 50%, #1A3010 100%)',
-    state:     'linear-gradient(160deg, #2A1A0A 0%, #4A2A10 50%, #3A1A08 100%)',
-  };
-  const emojis = { cave:'🌙', akademi:'🏛️', eternal:'🌸', ideas:'🌿', soul:'✨', knowledge:'🌾', state:'🏰' };
+const IMAGES = {
+  cave: kapitelGrotte,
+  akademi: kapitelAkademi,
+  eternal: kapitelDetEvige,
+  ideas: kapitelIdeernesVerden,
+  soul: kapitelUdodelig,
+  knowledge: kapitelSikkerViden,
+  state: kapitelFilosofistaten,
+};
 
+const ChapterCard = ({ chapter, onClick }) => {
   return (
     <button
       onClick={chapter.active ? onClick : undefined}
+      className={`relative flex flex-col justify-end items-start p-2.5 rounded-2xl overflow-hidden w-full min-h-[140px] ${chapter.active ? 'opacity-100 cursor-pointer' : 'opacity-70 cursor-default'}`}
       style={{
-        background: gradients[chapter.id] || '#1A1A4A',
-        borderRadius: 16,
-        border: chapter.active ? `1.5px solid rgba(245,200,66,0.3)` : '1.5px solid rgba(255,255,255,0.06)',
-        overflow: 'hidden', position: 'relative',
-        cursor: chapter.active ? 'pointer' : 'default',
-        opacity: chapter.active ? 1 : 0.7,
-        display: 'flex', flexDirection: 'column',
-        justifyContent: 'flex-end', alignItems: 'flex-start',
-        padding: 10, minHeight: 90, width: '100%',
+        backgroundImage: `url(${IMAGES[chapter.id]})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        border: chapter.active ? '1.5px solid rgba(245,200,66,0.3)' : '1.5px solid rgba(255,255,255,0.06)',
       }}
     >
-      <span style={{ position: 'absolute', top: 10, right: 10, fontSize: 22, opacity: 0.6 }}>
-        {emojis[chapter.id]}
-      </span>
-      {[...Array(4)].map((_, i) => (
-        <div key={i} style={{
-          position: 'absolute', left: `${10 + i * 12}%`, top: `${8 + i * 8}%`,
-          width: 1.5, height: 1.5, borderRadius: '50%', background: 'white', opacity: 0.5,
-        }} />
-      ))}
-      <p style={{ color: 'white', fontSize: 11, fontWeight: 800, lineHeight: 1.3, position: 'relative', zIndex: 1 }}>
+      <p className="text-[#F0EAFF] text-base font-fredoka font-bold leading-tight relative z-10 max-w-[90px] text-left">
         {chapter.title}
       </p>
       {chapter.active && (
-        <div style={{
-          position: 'absolute', bottom: 8, right: 8, width: 22, height: 22, borderRadius: '50%',
-          background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-        }}>
-          <span style={{ fontSize: 9, marginLeft: 1 }}>▶</span>
+        <div className="absolute bottom-2 right-2 w-[22px] h-[22px] rounded-full flex  bg-white/20">
+          <span className="text-base ml-px">▶</span>
         </div>
       )}
     </button>
@@ -97,33 +88,36 @@ export default function ChaptersScreen() {
       <div className="flex-1 flex flex-col overflow-hidden relative">
         <TopBar />
 
-        {/* Chapter grid — only accessible when girl is small */}
+        {/* Chapter grid */}
         <div className={`scrollable flex-1 px-4 pb-5 ${girlLarge ? 'pointer-events-none' : ''}`}>
-          <h1 className="text-brand-accent text-4xl font-black mb-0.5">Velkommen</h1>
-          <p className="text-brand-sub text-sm font-semibold mb-4">Vælg et kapitel for at starte et spil</p>
+          <h1 className="text-brand-accent text-4xl font-black mb-0.5 font-fredoka">Velkommen</h1>
+          <p className="text-[#F0EAFF] text-base font-semibold font-opensans mb-4">Vælg et kapitel for at starte et spil</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+            
+            {/* Cave — stor venstre kort */}
             <div style={{ gridRow: 'span 2', display: 'flex', flexDirection: 'column' }}>
               <button
                 onClick={handleCaveClick}
                 style={{
                   flex: 1,
-                  background: 'linear-gradient(160deg, #0D1B3E 0%, #1A3560 50%, #0A2040 100%)',
-                  borderRadius: 16, border: '1.5px solid rgba(245,200,66,0.3)',
-                  overflow: 'hidden', position: 'relative',
-                  cursor: 'pointer', display: 'flex', flexDirection: 'column',
-                  justifyContent: 'flex-end', alignItems: 'flex-start',
-                  padding: 10, minHeight: 190,
+                  backgroundImage: `url(${kapitelGrotte})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  borderRadius: 16,
+                  border: '1.5px solid rgba(245,200,66,0.3)',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                  alignItems: 'flex-start',
+                  padding: 10,
+                  minHeight: 190,
                 }}
               >
-                <span style={{ position: 'absolute', top: 10, right: 10, fontSize: 32, opacity: 0.6 }}>🌙</span>
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} style={{
-                    position: 'absolute', left: `${10 + i * 12}%`, top: `${8 + i * 8}%`,
-                    width: 1.5, height: 1.5, borderRadius: '50%', background: 'white', opacity: 0.5,
-                  }} />
-                ))}
-                <p style={{ color: 'white', fontSize: 14, fontWeight: 800, lineHeight: 1.3, position: 'relative', zIndex: 1 }}>
+                <p className="text-[#F0EAFF] text-base font-fredoka font-bold leading-tight relative z-10 max-w-[120px] text-left">
                   {CHAPTERS[0].title}
                 </p>
                 <div style={{
@@ -134,10 +128,12 @@ export default function ChaptersScreen() {
                 </div>
               </button>
             </div>
+
             <ChapterCard chapter={CHAPTERS[1]} />
             <ChapterCard chapter={CHAPTERS[2]} />
             <ChapterCard chapter={CHAPTERS[3]} />
             <ChapterCard chapter={CHAPTERS[4]} />
+
             <div style={{ gridColumn: 'span 2', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               <ChapterCard chapter={CHAPTERS[5]} />
               <ChapterCard chapter={CHAPTERS[6]} />
@@ -145,21 +141,20 @@ export default function ChaptersScreen() {
           </div>
         </div>
 
-        {/* Sofie overlay — large state: image fills from bottom, text overlaid on speech bubble */}
+        {/* Sofie overlay — stor */}
         {girlLarge && (
           <div
             className="absolute inset-0 z-20 flex flex-col justify-end"
             style={{ background: 'rgba(13,11,43,0.72)' }}
           >
-            {/* Image + text overlay container — anchored to bottom */}
             <div className="relative w-full">
               <img src={sofieImg} alt="Sofie" className="w-full block" draggable={false} />
 
-              {/* Text overlaid on speech bubble */}
+              {/* Tekst i taleboble */}
               <div
                 style={{
                   position: 'absolute',
-                  top: '4%', left: '43%', right: '7%', height: '22%',
+                  top: '4%', left: '42%', right: '11%', height: '22%',
                   padding: '8px 10px',
                   overflow: 'hidden',
                 }}
@@ -180,7 +175,7 @@ export default function ChaptersScreen() {
                 </p>
               </div>
 
-              {/* Fortsæt button — within white bubble body */}
+              {/* Fortsæt knap */}
               <button
                 onClick={shrinkGirl}
                 style={{
@@ -203,21 +198,17 @@ export default function ChaptersScreen() {
           </div>
         )}
 
-        {/* Sofie small — bottom left corner, tappable to expand */}
+        {/* Sofie lille — nederst til venstre */}
         {!girlLarge && (
           <button
             onClick={expandGirl}
-            style={{
-              position: 'absolute', bottom: 0, left: 0,
-              background: 'none', border: 'none', outline: 'none',
-              padding: 0, cursor: 'pointer', zIndex: 20,
-            }}
+            className="absolute bottom-0 left-0 bg-transparent border-none outline-none p-0 cursor-pointer z-20"
           >
             <img
-              src={sofieSmallImg}
+              src={sofieVinkerImg}
               alt="Sofie"
               draggable={false}
-              style={{ height: '15vh', width: 'auto', display: 'block' }}
+              className=" w-auto block"
             />
           </button>
         )}
