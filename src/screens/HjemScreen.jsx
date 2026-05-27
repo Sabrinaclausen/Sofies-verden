@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, BottomNav, CharacterEmoji, C } from '../components/shared';
+import profilBaggrund from '../assets/profil-baggrund.png';
 
 export default function HjemScreen() {
   const { state, navigate, openCharacterSelect } = useApp();
@@ -13,56 +14,55 @@ export default function HjemScreen() {
         <div className="flex-1 flex flex-col items-center justify-between px-6 pt-4 pb-3">
           {/* Points */}
           <div className="text-center">
-            <p className="text-brand-accent font-black leading-none"
-               style={{ fontSize: 80, textShadow: '0 4px 20px rgba(245,200,66,0.4)' }}>
+            <p className="text-brand-accent font-fredoka font-black leading-none mt-8"
+               style={{ fontSize: 120, textShadow: '0 4px 20px rgba(245,200,66,0.4)' }}>
               {state.points}
             </p>
-            <p className="text-white text-lg font-bold mt-1">Point</p>
+            <p className="text-white text-xl font-fredoka mt-1">Point</p>
           </div>
 
           {/* Stat cards */}
-          <div className="flex gap-4 w-full">
+          <div className="flex gap-10 justify-center w-full">
             <button
               onClick={() => navigate('badges')}
-              className="flex-1 bg-brand-navy rounded-2xl px-3 py-3 text-center"
-              style={{ border: `2px solid ${C.accent}` }}
+              className="w-[90px] bg-brand-navy rounded-xl text-center relative"
+              style={{ border: `2px solid ${C.accent}`, padding: '8px 12px' }}
             >
-              <p className="text-brand-sub text-xs font-bold mb-1">Badges</p>
-              <p className="text-brand-accent text-3xl font-black">{state.badges}</p>
+              <p className="absolute -top-7 left-0 right-0 text-center text-base" 
+                style={{ color: '#F0EAFF', fontFamily: 'Open Sans, sans-serif' }}>
+                Badges
+              </p>
+              <p className="text-brand-accent text-2xl font-black" 
+                style={{ fontFamily: 'Fredoka, sans-serif' }}>
+                {state.badges}
+              </p>
             </button>
             <button
               onClick={() => navigate('requests')}
-              className="flex-1 bg-brand-navy rounded-2xl px-3 py-3 text-center"
-              style={{ border: `2px solid ${C.accent}` }}
+              className="w-[90px] bg-brand-navy rounded-xl text-center relative"
+              style={{ border: `2px solid ${C.accent}`, padding: '8px 12px' }}
             >
-              <p className="text-brand-sub text-xs font-bold mb-1">Anmodninger</p>
-              <p className="text-brand-accent text-3xl font-black">{state.friendRequests}</p>
+              <p className="absolute -top-7 left-0 right-0 text-center text-base" 
+                style={{ color: '#F0EAFF', fontFamily: 'Open Sans, sans-serif', left: '-30px', right: '-30px' }}>
+                Anmodninger
+              </p>
+              <p className="text-brand-accent text-2xl font-black" 
+                style={{ fontFamily: 'Fredoka, sans-serif' }}>
+                {state.friendRequests}
+              </p>
             </button>
           </div>
 
           {/* Character circle — tap to open character select */}
           <button
             onClick={() => openCharacterSelect('hjem')}
-            className="relative rounded-full flex items-center justify-center overflow-hidden"
-            style={{
-              width: 190, height: 190,
-              background: 'radial-gradient(circle at 40% 30%, #1A1660, #080520)',
-              border: '2px solid rgba(255,255,255,0.08)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.6)',
-            }}
+            className="relative flex items-center justify-center mb-12"
+            style={{ background: 'none', border: 'none', padding: 0 }}
           >
-            {[[20,15],[60,25],[140,18],[155,45],[25,55],[100,10]].map(([x,y],i) => (
-              <div key={i} className="absolute w-0.5 h-0.5 rounded-full bg-white opacity-50"
-                   style={{ left: x, top: y }} />
-            ))}
-            <div className="absolute bottom-0 left-0 right-0 h-[55px]"
-                 style={{
-                   background: 'linear-gradient(135deg, #1A0808 0%, #2A0C0C 40%, #150605 100%)',
-                   clipPath: 'polygon(0% 100%, 0% 60%, 15% 30%, 30% 55%, 45% 25%, 60% 50%, 75% 20%, 90% 45%, 100% 30%, 100% 100%)',
-                 }} />
-            <div className="absolute top-[18px] right-[22px] w-7 h-7 rounded-full bg-[#E8DFC5]" />
-            <div className="absolute top-[14px] right-[18px] w-6 h-6 rounded-full bg-[#080520]" />
-            <CharacterEmoji id={state.selectedCharacter} size={105} />
+            <img src={profilBaggrund} alt="Baggrund" className="w-[160px] h-[160px] object-contain" />
+            <div className="absolute" style={{ bottom: '-100px' }}>
+              <CharacterEmoji id={state.selectedCharacter} size={260} />
+            </div>
           </button>
         </div>
 

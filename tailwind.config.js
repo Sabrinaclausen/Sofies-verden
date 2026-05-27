@@ -4,11 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'brand-bg': '#0D0B2B',
-        'brand-card': '#2D2A6E',
+        'brand-bg': '#17143A',
+        'brand-card': '#2D1F6E',
         'brand-accent': '#F5C842',
-        'brand-sub': '#C4BFEF',
-        'brand-navy': '#1A1848',
+        'brand-sub': '#F0EAFF',
+        'brand-navy': '#17143A',
         'brand-dark': '#1A1600',
       },
       

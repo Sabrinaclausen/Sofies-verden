@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, BottomNav, C } from '../components/shared';
+import badge from '../assets/grotte-badges.png';
 
 export default function BadgesScreen() {
   const { state } = useApp();
@@ -29,14 +30,14 @@ export default function BadgesScreen() {
 
           {/* Badge card — only show after quiz completed */}
           {state.quizCompleted ? (
-            <div className="bg-brand-navy rounded-2xl px-4 py-4 flex items-center gap-3 border border-white/[0.08]">
-              <span className="text-4xl">🏔️</span>
-              <div className="flex-1">
-                <p className="text-brand-accent text-base font-extrabold">Hulelignelsen</p>
-                <p className="text-brand-sub text-xs font-semibold">Badge optjent</p>
-              </div>
-              <div className="bg-[#7C3AED] rounded-full px-3 py-1 text-xs font-extrabold text-white">NY</div>
+            <div className="w-full bg-brand-navy rounded-2xl px-4 py-3 flex items-center gap-3 border border-white/[0.08]">
+            <img src={badge} alt="Badge" className="w-10 h-10 object-contain" />
+            <div className="flex-1">
+              <p className="text-[#AA85FF] text-base font-opensans font-extrabold">Hulelignelsen</p>
+              <p className="text-[#6C3FD4] text-sm font-opensans font-semibold">Nyt badge optjent!</p>
             </div>
+            <div className="bg-[#6C3FD4] rounded-full px-3 py-1 text-xs font-fredoka text-[#AA85FF]">NY</div>
+          </div>
           ) : (
             <div className="bg-brand-navy rounded-2xl px-4 py-4 flex items-center gap-3 border border-white/[0.08] opacity-50">
               <span className="text-4xl">🔒</span>

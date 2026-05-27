@@ -22,14 +22,14 @@ function getLabelBg(idx, selected, revealed, correct) {
     if (idx === selected) return '#B22A2A';
   }
   if (idx === selected) return '#F5C842';
-  return '#1A1850';
+  return '#17143A'; // mørk cirkel baggrund
 }
 
 function getLabelColor(idx, selected, revealed, correct) {
   if (revealed && idx === correct) return '#0A2A18';
-  if (revealed && idx === selected) return 'white';
+  if (revealed && idx === selected) return '1A1600';
   if (!revealed && idx === selected) return '#1A1600';
-  return 'white';
+  return '#AA85FF'; // lys lilla tekst
 }
 
 export default function QuizScreen() {
@@ -111,7 +111,7 @@ export default function QuizScreen() {
         {/* Question card + answers — anchored to bottom */}
         <div className="px-4 pb-2 flex flex-col gap-2">
           <div
-            className="rounded-2xl px-4 py-3 text-white text-base font-bold leading-snug flex-shrink-0"
+            className="rounded-2xl px-8 py-9 text-white text-base font-opensans leading-snug flex-shrink-0"
             style={{ background: 'rgba(58,53,128,0.92)' }}
           >
             {q.question}
@@ -128,21 +128,20 @@ export default function QuizScreen() {
                   borderRadius: 16, padding: '12px 16px', textAlign: 'left',
                   border: `2px solid ${borderColor}`,
                   background,
-                  cursor: revealed ? 'default' : 'pointer',
                   transition: 'background 0.2s, border-color 0.2s',
                 }}
               >
                 <div style={{
                   width: 32, height: 32, borderRadius: '50%', flexShrink: 0,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 12, fontWeight: 900,
+                  fontSize: 20, fontFamily: 'Fredoka',
                   background: getLabelBg(idx, selected, revealed, q.correct),
                   color: getLabelColor(idx, selected, revealed, q.correct),
                   transition: 'background 0.2s',
                 }}>
                   {LABELS[idx]}
                 </div>
-                <span style={{ color: 'white', fontSize: 14, fontWeight: 600, lineHeight: 1.35 }}>
+                <span style={{ color: 'white', fontSize: 16, fontFamily: 'Open Sans',  lineHeight: 1.35 }}>
                   {opt}
                 </span>
               </button>
@@ -157,7 +156,7 @@ export default function QuizScreen() {
               onClick={handleSvar}
               style={{
                 width: '100%', padding: '16px 0', borderRadius: 9999,
-                fontSize: 16, fontWeight: 900,
+                fontSize: 16, fontWeight: 900, fontFamily: 'Open Sans, sans-serif',
                 background: svarActive ? '#F5C842' : '#BDBDBD',
                 color: svarActive ? '#1A1600' : '#888',
                 cursor: svarActive ? 'pointer' : 'default',
@@ -172,7 +171,7 @@ export default function QuizScreen() {
               onClick={handleNaeste}
               style={{
                 width: '100%', padding: '16px 0', borderRadius: 9999,
-                fontSize: 16, fontWeight: 900,
+                fontSize: 19, fontFamily: 'Open Sans, sans-serif', 
                 background: '#F5C842', color: '#1A1600',
                 cursor: 'pointer',
                 boxShadow: '0 4px 14px rgba(245,200,66,0.4)',

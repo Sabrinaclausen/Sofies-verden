@@ -73,8 +73,17 @@ export default function LessonScreen() {
   };
 
   return (
-    <div className="w-full h-full relative overflow-hidden bg-brand-bg">
-      <div className="absolute inset-0 flex flex-col">
+  <div className="w-full h-full relative overflow-hidden">
+
+    {/* Baggrundsbillede */}
+    <MountainScene />
+
+    {/* Mørkt overlay */}
+    <div className="absolute inset-0 z-[1] bg-[rgba(8,6,26,0.55)]" />
+
+    {/* Alt indhold ovenpå */}
+    <div className="absolute inset-0 z-10 flex flex-col">
+      
       <TopBar />
 
       {/* Progress bar */}
@@ -83,49 +92,42 @@ export default function LessonScreen() {
           {step.level} af {totalSteps}
         </span>
         <div className="flex-1 h-1.5 bg-white/10 rounded-full">
-          <div className="h-full bg-[#6C63FF] rounded-full transition-all duration-500"
-               style={{ width: `${Math.max(pct, 4)}%` }} />
+          <div
+            className="h-full bg-[#6C63FF] rounded-full transition-all duration-500"
+            style={{ width: `${Math.max(pct, 4)}%` }}
+          />
         </div>
         <span className="text-brand-sub text-xs font-bold whitespace-nowrap min-w-[38px] text-right">
           {pct}%
         </span>
       </div>
 
-      <MountainScene />
-
       {/* Chat area */}
-      <div className="flex-1 relative overflow-hidden" style={{ padding: '16px 20px 8px 20px' }}>
+      <div className="flex-1 relative overflow-hidden px-5 pt-4 pb-2">
 
-        {/* Avatar — fixed, never moves */}
+        {/* Avatar — fast position */}
         <img
           src={profileImg}
           alt="Sofie"
           draggable={false}
-          style={{
-            position: 'absolute',
-            bottom: 8, left: 20,
-            width: 40, height: 40,
-            borderRadius: '50%',
-            objectFit: 'cover',
-            zIndex: 10,
-          }}
+          className="absolute bottom-2 left-5 w-10 h-10 rounded-full object-cover z-10"
         />
 
-        {/* Bubbles — pinned to bottom, offset right of avatar */}
-        <div className="h-full flex flex-col justify-end gap-3" style={{ paddingLeft: 52 }}>
+        {/* Bobler — pinned til bund */}
+        <div className="h-full flex flex-col justify-end gap-3 pl-[52px]">
 
-          {/* Completed bubbles */}
+          {/* Færdige bobler */}
           {step.bubbles.slice(0, visibleCount).map((text, i) => (
             <div
               key={i}
-              className="bg-brand-card rounded-2xl text-white text-sm font-semibold leading-relaxed"
-              style={{ opacity: 0.65, padding: '12px 16px', wordBreak: 'break-word' }}
+              className="bg-brand-card rounded-2xl text-white text-sm font-semibold leading-relaxed px-4 py-3 opacity-65"
+              style={{ wordBreak: 'break-word' }}
             >
               {text}
             </div>
           ))}
 
-          {/* Current bubble — fixed size via hidden full text */}
+          {/* Aktiv boble */}
           <div
             key={visibleCount}
             className="bg-brand-card rounded-2xl text-white text-sm font-semibold leading-relaxed"
@@ -135,46 +137,38 @@ export default function LessonScreen() {
               wordBreak: 'break-word',
             }}
           >
-            <span style={{ gridArea: '1/1', padding: '12px 16px', visibility: 'hidden' }}>
+            <span className="px-4 py-3 invisible" style={{ gridArea: '1/1' }}>
               {step.bubbles[visibleCount]}
             </span>
-            <span style={{ gridArea: '1/1', padding: '12px 16px' }}>
+            <span className="px-4 py-3" style={{ gridArea: '1/1' }}>
               {typedText}
-              {!typingDone && <span style={{ opacity: 0.4 }}>|</span>}
+              {!typingDone && <span className="opacity-40">|</span>}
             </span>
           </div>
         </div>
       </div>
 
-      {/* Button row — Skip → or Næste →, always same position */}
-      <div className="flex items-center justify-end px-5 pt-2 pb-5 flex-shrink-0" style={{ minHeight: 72 }}>
+      {/* Skip / Til quiz knap */}
+      <div className="flex items-center justify-end px-5 pt-2 pb-5 flex-shrink-0 min-h-[72px]">
         {!allDone ? (
           <button
             onClick={handleSkip}
-            style={{
-              background: 'none',
-              border: 'none',
-              outline: 'none',
-              padding: '12px 0',
-              fontSize: 15,
-              fontWeight: 700,
-              color: 'rgba(255,255,255,0.7)',
-              cursor: 'pointer',
-            }}
+            className="bg-transparent border-none outline-none py-3 text-[19px] font-opensans text-brand-sub"
           >
             Skip →
           </button>
         ) : (
           <button
             onClick={() => navigate('quiz')}
-            className="py-3 px-7 rounded-full text-base font-black text-brand-dark"
+            className="py-3 px-7 rounded-full text-lg font-black font-opensans text-brand-dark"
             style={{ background: C.accent, boxShadow: '0 4px 14px rgba(245,200,66,0.4)' }}
           >
-            Til quiz →
+            Næste →
           </button>
         )}
       </div>
-      </div>
+
     </div>
-  );
+  </div>
+);
 }

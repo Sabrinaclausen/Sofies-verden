@@ -16,6 +16,7 @@ const initialState = {
   characterSelected: false,
   characterSelectOrigin: 'startside',
   mapQuizMode: false,
+  girlLarge: false,
   friendsList: [
     { username: 'CoolDragon99', xp: 200, emoji: '🐱' },
     { username: 'NinjaKat2014', xp: 280, emoji: '🐶' },

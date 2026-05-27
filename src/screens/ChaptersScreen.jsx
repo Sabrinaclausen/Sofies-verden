@@ -50,14 +50,13 @@ const ChapterCard = ({ chapter, onClick }) => {
 };
 
 export default function ChaptersScreen() {
-  const { navigate } = useApp();
-  const [girlLarge, setGirlLarge] = useState(true);
+  const { navigate, state, updateState } = useApp();
   const [typedText, setTypedText] = useState('');
   const [typingDone, setTypingDone] = useState(false);
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    if (!girlLarge) return;
+    if (!state.girlLarge) return;
     setTypedText('');
     setTypingDone(false);
     let i = 0;
@@ -70,18 +69,18 @@ export default function ChaptersScreen() {
       }
     }, 28);
     return () => clearInterval(intervalRef.current);
-  }, [girlLarge]);
+  }, [state.girlLarge]);
 
   const handleCaveClick = () => {
     navigate('map');
   };
 
   const shrinkGirl = () => {
-    clearInterval(intervalRef.current);
-    setGirlLarge(false);
-  };
+  clearInterval(intervalRef.current);
+  updateState({ girlLarge: false });
+};
 
-  const expandGirl = () => setGirlLarge(true);
+const expandGirl = () => updateState({ girlLarge: true });
 
   return (
     <StarsWrapper>
@@ -89,7 +88,7 @@ export default function ChaptersScreen() {
         <TopBar />
 
         {/* Chapter grid */}
-        <div className={`scrollable flex-1 px-4 pb-5 ${girlLarge ? 'pointer-events-none' : ''}`}>
+        <div className={`scrollable flex-1 px-4 pb-5 ${state.girlLarge ? 'pointer-events-none' : ''}`}>
           <h1 className="text-brand-accent text-4xl font-black mb-0.5 font-fredoka">Velkommen</h1>
           <p className="text-[#F0EAFF] text-base font-semibold font-opensans mb-4">Vælg et kapitel for at starte et spil</p>
 
@@ -142,7 +141,7 @@ export default function ChaptersScreen() {
         </div>
 
         {/* Sofie overlay — stor */}
-        {girlLarge && (
+        {state.girlLarge && (
           <div
             className="absolute inset-0 z-20 flex flex-col justify-end"
             style={{ background: 'rgba(13,11,43,0.72)' }}
@@ -199,7 +198,7 @@ export default function ChaptersScreen() {
         )}
 
         {/* Sofie lille — nederst til venstre */}
-        {!girlLarge && (
+        {!state.girlLarge && (
           <button
             onClick={expandGirl}
             className="absolute bottom-0 left-0 bg-transparent border-none outline-none p-0 cursor-pointer z-20"

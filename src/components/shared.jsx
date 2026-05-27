@@ -10,6 +10,7 @@ import avatarCompass from '../assets/avatar-kompas.png';
 import iconHome from '../assets/ikon-hus.png';
 import iconGear from '../assets/ikon-indstillinger.png';
 import iconProfil from '../assets/ikon-profil.png';
+import mountainBg from '../assets/mountain-baggrund.png';
 
 export const C = {
   bg: '#0D0B2B',
@@ -23,15 +24,15 @@ export const C = {
 };
 
 export function TopBar({ rightIcon, onRight }) {
-  const { navigate, state } = useApp();
+  const { navigate, state, updateState } = useApp();
   const handleRight = onRight || (() => navigate('hjem'));
   const RightIcon = rightIcon === 'gear'
     ? () => <GearIcon size={28} />
     : () => <PersonIcon size={28} />;
-  
-    return (
+
+  return (
     <div className="flex items-center justify-between px-5 pt-3 pb-2 z-10 flex-shrink-0 relative">
-      <button onClick={() => navigate('chapters')} className="bg-transparent p-1">
+      <button onClick={() => { updateState({ girlLarge: false }); navigate('chapters'); }} className="bg-transparent p-1">
         <HomeIcon size={28} />
       </button>
       <span className="text-brand-accent font-extrabold text-sm tracking-wide">{state.username}</span>
@@ -121,63 +122,15 @@ function StarField() {
   );
 }
 
+
 export function MountainScene({ fullscreen = false }) {
-  const svgContent = (
-    <svg viewBox="0 0 430 260" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="mSky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#080618" />
-          <stop offset="60%" stopColor="#12103A" />
-          <stop offset="100%" stopColor="#1E1854" />
-        </linearGradient>
-      </defs>
-      <rect width="430" height="260" fill="url(#mSky)" />
-      {[[30,18],[75,10],[120,22],[165,8],[210,16],[255,24],[300,12],[345,20],[390,8],[420,16],
-        [15,35],[58,42],[100,30],[148,46],[192,38],[238,44],[282,32],[326,48],[368,36],[410,42],
-        [42,58],[88,64],[135,52],[180,68],[222,60],[265,66],[308,54],[352,70],[395,58]].map(([x,y],i) => (
-        <circle key={i} cx={x} cy={y} r={i%4===0?1.2:0.7} fill="white" opacity={0.3+i%4*0.12} />
-      ))}
-      <line x1="298" y1="22" x2="325" y2="40" stroke="white" strokeWidth="1" opacity="0.75" strokeLinecap="round"/>
-      <circle cx="218" cy="56" r="28" fill="#E8DFC5" />
-      <circle cx="233" cy="48" r="24" fill="#09071A" />
-      <path d="M0 260 L0 155 L45 108 L85 135 L130 88 L175 122 L218 78 L262 115 L305 82 L348 112 L390 88 L430 105 L430 260 Z" fill="#16103A" />
-      <path d="M0 260 L0 195 L28 172 L55 188 L82 158 L112 178 L140 148 L168 172 L196 142 L224 168 L252 138 L280 162 L308 148 L336 170 L364 152 L392 168 L420 155 L430 158 L430 260 Z" fill="#3A1508" />
-      <path d="M0 260 L0 212 L22 198 L48 208 L72 192 L98 205 L124 186 L150 200 L175 182 L200 196 L226 178 L252 194 L278 180 L304 196 L330 184 L356 198 L382 186 L408 200 L430 192 L430 260 Z" fill="#2D1006" />
-      <polygon points="0,260 16,188 32,260" fill="#150802" />
-      <polygon points="12,260 28,178 44,260" fill="#180A03" />
-      <polygon points="24,260 42,170 60,260" fill="#120701" />
-      <polygon points="38,260 56,182 74,260" fill="#1A0B03" />
-      <polygon points="52,260 68,172 84,260" fill="#150802" />
-      <polygon points="64,260 80,185 96,260" fill="#120701" />
-      <polygon points="76,260 90,195 104,260" fill="#1A0B03" />
-      <polygon points="326,260 342,192 358,260" fill="#150802" />
-      <polygon points="340,260 356,178 372,260" fill="#180A03" />
-      <polygon points="354,260 370,168 386,260" fill="#120701" />
-      <polygon points="368,260 384,180 400,260" fill="#1A0B03" />
-      <polygon points="382,260 398,172 414,260" fill="#150802" />
-      <polygon points="396,260 412,182 428,260" fill="#1A0B03" />
-      <polygon points="410,260 430,176 430,260" fill="#120701" />
-      <path d="M0 242 Q60 235 120 240 Q180 245 215 238 Q260 232 330 238 Q385 242 430 236 L430 260 L0 260 Z" fill="#0D0820" />
-      <ellipse cx="30" cy="255" rx="25" ry="12" fill="#1A0C20" />
-      <ellipse cx="400" cy="253" rx="28" ry="11" fill="#1A0C20" />
-      <ellipse cx="185" cy="258" rx="18" ry="8" fill="#130A18" />
-    </svg>
-  );
-
-  if (fullscreen) {
-    return (
-      <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-        {svgContent}
-      </div>
-    );
-  }
-
   return (
-    <div style={{ width: '100%', height: '35vh', flexShrink: 0, overflow: 'hidden', position: 'relative' }}>
-      {svgContent}
+    <div className="absolute inset-0 z-0">
+      <img src={mountainBg} alt="" className="w-full h-full object-cover" />
     </div>
   );
 }
+
 
 export function CharacterEmoji({ id, size = 60 }) {
   const map = { 

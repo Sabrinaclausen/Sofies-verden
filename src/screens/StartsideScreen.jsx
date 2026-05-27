@@ -6,7 +6,7 @@ import stjerneBaggrund from '../assets/stjerne-baggrund.png';
 import { CharacterEmoji } from '../components/shared';
 
 export default function StartsideScreen() {
-  const { navigate, state, openCharacterSelect } = useApp();
+  const { navigate, state, openCharacterSelect, updateState } = useApp();
 
   return (
     <div style={{ 
@@ -51,8 +51,8 @@ export default function StartsideScreen() {
 
         {/* Play knap */}
         <button
-          onClick={() => navigate('chapters')}
-          className="w-full py-[18px] rounded-full text-xl font-black text-brand-dark tracking-wide"
+          onClick={() => { updateState({ girlLarge: true }); navigate('chapters'); }}
+          className="w-full py-[18px] rounded-full text-xl font-black font-fredoka text-brand-dark tracking-wide"
           style={{ background: '#F5C842', boxShadow: '0 6px 20px rgba(245,200,66,0.45)' }}
         >
           Play ▶
