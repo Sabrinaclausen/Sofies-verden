@@ -76,28 +76,26 @@ export function BottomNav({ active }) {
 
 export function StarsWrapper({ children, style }) {
   return (
-    <div style={{ 
-      position: 'relative', 
-      width: '100%', 
-      height: '100%', 
-      backgroundImage: `url(${stjerneBaggrund})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      overflow: 'hidden', 
-      ...style 
-    }}>
-      <div style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <div
+      className="relative w-full h-full overflow-hidden"
+      style={{
+        backgroundImage: `url(${stjerneBaggrund})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        ...style
+      }}
+    >
+      <div className="relative z-[1] h-full flex flex-col">
         {children}
       </div>
     </div>
   );
 }
 
-
-export function MountainScene({ fullscreen = false }) {
+export function MountainScene() {
   return (
     <div className="absolute inset-0 z-0">
-      <img src={mountainBg} alt="" className="w-full h-full object-cover" />
+      <img src={mountainBg} alt="bjerg" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -162,7 +160,7 @@ export function PeopleIcon({ size = 26, color = '#F0EAFF' }) {
 }
 
 
-export function SearchIcon({ size = 18, color = '#C4BFEF' }) {
+export function SearchIcon({ size = 18, color = '#F0EAFF' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
       <circle cx="11" cy="11" r="7" stroke={color} strokeWidth="2" />
@@ -171,11 +169,4 @@ export function SearchIcon({ size = 18, color = '#C4BFEF' }) {
   );
 }
 
-export function PencilIcon({ size = 16, color = 'white' }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none">
-      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke={color} strokeWidth="2" strokeLinecap="round" />
-      <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
+

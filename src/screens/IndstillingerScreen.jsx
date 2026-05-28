@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../AppContext';
-import { StarsWrapper, TopBar, BottomNav, CharacterEmoji, PencilIcon, C } from '../components/shared';
+import { StarsWrapper, TopBar, BottomNav, CharacterEmoji, C } from '../components/shared';
 
 function Toggle({ on, onToggle }) {
   return (
@@ -46,7 +46,6 @@ export default function IndstillingerScreen() {
                 onClick={() => openCharacterSelect('settings')}
                 className="absolute bottom-0.5 right-0.5 w-7 h-7 rounded-full bg-brand-card flex items-center justify-center border border-white/20"
               >
-                <PencilIcon size={12} color="white" />
               </button>
             </div>
           </div>
@@ -72,7 +71,6 @@ export default function IndstillingerScreen() {
                 <div className="flex items-center justify-between">
                   <p className="text-white text-base font-extrabold">{state.username}</p>
                   <button onClick={() => setEditing(true)} className="bg-transparent p-1">
-                    <PencilIcon size={18} color={C.accent} />
                   </button>
                 </div>
               </div>

@@ -36,8 +36,8 @@ export default function CompletionScreen() {
 
           {/* Title */}
           <div className="text-center">
-            <h1 className="text-white text-4xl font-fredoka font-black mb-1">Modul gennemført!</h1>
-            <p className="text-brand-sub text-sm font-semibold">
+            <h1 className="text-white text-4xl font-fredoka font-semibold mb-1">Modul gennemført!</h1>
+            <p className="text-brand-sub text-base font-opensans font-semibold">
               Du klarede {correct} af {total} spørgsmål rigtigt
             </p>
           </div>
@@ -52,11 +52,11 @@ export default function CompletionScreen() {
           {/* Stat cards */}
           <div className="flex gap-3 w-full">
             <div className="flex-1 bg-brand-navy rounded-2xl px-3 py-4 text-center border border-white/[0.08]">
-              <p className="text-white text-4xl font-black">{xpEarned}</p>
+              <p className="text-brand-sub text-4xl font-semibold font-fredoka">{xpEarned}</p>
               <p className="text-brand-sub text-sm font-semibold mt-1">XP optjent</p>
             </div>
             <div className="flex-1 bg-brand-navy rounded-2xl px-3 py-4 text-center border border-white/[0.08]">
-              <p className="text-white text-4xl font-black">{correct}/{total}</p>
+              <p className="text-brand-sub text-4xl font-semibold font-fredoka">{correct}/{total}</p>
               <p className="text-brand-sub text-sm font-semibold mt-1">rigtige svar</p>
             </div>
           </div>

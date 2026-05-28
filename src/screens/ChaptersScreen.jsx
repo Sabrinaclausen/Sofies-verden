@@ -3,7 +3,6 @@ import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, C } from '../components/shared';
 import { CHAPTERS } from '../data';
 import sofieImg from '../assets/sofie-startside.png';
-import sofieSmallImg from '../assets/sofie-startside-to.png';
 import kapitelGrotte from '../assets/kapitel-grotte.png';
 import kapitelAkademi from '../assets/kapitel-akademi.png';
 import kapitelDetEvige from '../assets/kapitel-detevige.png';
@@ -88,42 +87,29 @@ const expandGirl = () => updateState({ girlLarge: true });
         <TopBar />
 
         {/* Chapter grid */}
-        <div className={`scrollable flex-1 px-4 pb-5 ${state.girlLarge ? 'pointer-events-none' : ''}`}>
-          <h1 className="text-brand-accent text-4xl font-black mb-0.5 font-fredoka">Velkommen</h1>
+        <div className={`scrollable flex-1 px-4 pt-4 pb-5 ${state.girlLarge ? 'pointer-events-none' : ''}`}>
+          <h1 className="text-brand-accent text-5xl font-semibold mb-0.5 font-fredoka">Velkommen</h1>
           <p className="text-[#F0EAFF] text-base font-semibold font-opensans mb-4">Vælg et kapitel for at starte et spil</p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+          <div className="grid grid-cols-2 gap-2.5">
             
             {/* Cave — stor venstre kort */}
-            <div style={{ gridRow: 'span 2', display: 'flex', flexDirection: 'column' }}>
+            <div className="row-span-2 flex flex-col">
               <button
                 onClick={handleCaveClick}
+                className="flex-1 relative flex flex-col justify-end items-start p-2.5 rounded-2xl overflow-hidden cursor-pointer min-h-[190px]"
                 style={{
-                  flex: 1,
                   backgroundImage: `url(${kapitelGrotte})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  borderRadius: 16,
                   border: '1.5px solid rgba(245,200,66,0.3)',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-end',
-                  alignItems: 'flex-start',
-                  padding: 10,
-                  minHeight: 190,
                 }}
               >
                 <p className="text-[#F0EAFF] text-base font-fredoka font-bold leading-tight relative z-10 max-w-[120px] text-left">
                   {CHAPTERS[0].title}
                 </p>
-                <div style={{
-                  position: 'absolute', bottom: 10, right: 10, width: 24, height: 24, borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                }}>
-                  <span style={{ fontSize: 10, marginLeft: 1 }}>▶</span>
+                <div className="absolute bottom-2 right-2 w-7 h-7 rounded-full flex items-center justify-center bg-white/20">
+                  <span className="text-base ml-px">▶</span>
                 </div>
               </button>
             </div>
@@ -151,17 +137,13 @@ const expandGirl = () => updateState({ girlLarge: true });
 
               {/* Tekst i taleboble */}
               <div
-                style={{
-                  position: 'absolute',
-                  top: '4%', left: '42%', right: '11%', height: '22%',
-                  padding: '8px 10px',
-                  overflow: 'hidden',
-                }}
+                className="absolute overflow-hidden"
+                style={{ top: '4%', left: '42%', right: '13%', height: '22%', padding: '8px 10px' }}
               >
                 <p
+                  className="font-opensans font-semibold"
                   style={{
                     fontSize: 11.5,
-                    fontWeight: 600,
                     lineHeight: 1.4,
                     color: '#1A1A1A',
                     wordBreak: 'break-word',
@@ -177,19 +159,8 @@ const expandGirl = () => updateState({ girlLarge: true });
               {/* Fortsæt knap */}
               <button
                 onClick={shrinkGirl}
-                style={{
-                  position: 'absolute',
-                  top: '27%', left: '44%',
-                  background: 'none',
-                  border: 'none',
-                  outline: 'none',
-                  padding: 0,
-                  fontSize: 14,
-                  fontFamily: 'Open Sans, sans-serif',
-                  color: '#1A1A1A',
-                  cursor: 'pointer',
-                  zIndex: 10,
-                }}
+                className="absolute bg-transparent border-none outline-none p-0 cursor-pointer z-10 font-opensans font-bold text-[14px]"
+                style={{ top: '27%', left: '44%', color: '#1A1A1A' }}
               >
                 Fortsæt →
               </button>
@@ -203,12 +174,7 @@ const expandGirl = () => updateState({ girlLarge: true });
             onClick={expandGirl}
             className="absolute bottom-0 left-0 bg-transparent border-none outline-none p-0 cursor-pointer z-20"
           >
-            <img
-              src={sofieVinkerImg}
-              alt="Sofie"
-              draggable={false}
-              className=" w-auto block"
-            />
+            <img src={sofieVinkerImg} alt="Sofie" draggable={false} className="w-auto block" />
           </button>
         )}
       </div>

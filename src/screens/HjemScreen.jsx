@@ -18,7 +18,7 @@ export default function HjemScreen() {
                style={{ fontSize: 120, textShadow: '0 4px 20px rgba(245,200,66,0.4)' }}>
               {state.points}
             </p>
-            <p className="text-white text-xl font-fredoka mt-1">Point</p>
+            <p className="text-brand-sub text-3xl font-fredoka font-semibold mt-1">Point</p>
           </div>
 
           {/* Stat cards */}
@@ -28,12 +28,10 @@ export default function HjemScreen() {
               className="w-[90px] bg-brand-navy rounded-xl text-center relative"
               style={{ border: `2px solid ${C.accent}`, padding: '8px 12px' }}
             >
-              <p className="absolute -top-7 left-0 right-0 text-center text-base" 
-                style={{ color: '#F0EAFF', fontFamily: 'Open Sans, sans-serif' }}>
+              <p className="absolute -top-7 left-0 right-0 text-center text-base font-opensans text-[#F0EAFF]">
                 Badges
               </p>
-              <p className="text-brand-accent text-2xl font-black" 
-                style={{ fontFamily: 'Fredoka, sans-serif' }}>
+              <p className="text-brand-accent text-2xl font-black font-fredoka">
                 {state.badges}
               </p>
             </button>
@@ -42,12 +40,11 @@ export default function HjemScreen() {
               className="w-[90px] bg-brand-navy rounded-xl text-center relative"
               style={{ border: `2px solid ${C.accent}`, padding: '8px 12px' }}
             >
-              <p className="absolute -top-7 left-0 right-0 text-center text-base" 
-                style={{ color: '#F0EAFF', fontFamily: 'Open Sans, sans-serif', left: '-30px', right: '-30px' }}>
+              <p className="absolute -top-7 text-center text-base font-opensans text-[#F0EAFF]"
+                style={{ left: '-30px', right: '-30px' }}>
                 Anmodninger
               </p>
-              <p className="text-brand-accent text-2xl font-black" 
-                style={{ fontFamily: 'Fredoka, sans-serif' }}>
+              <p className="text-brand-accent text-2xl font-black font-fredoka">
                 {state.friendRequests}
               </p>
             </button>
@@ -56,9 +53,8 @@ export default function HjemScreen() {
           {/* Character circle — tap to open character select */}
           <button
             onClick={() => openCharacterSelect('hjem')}
-            className="relative flex items-center justify-center mb-12"
-            style={{ background: 'none', border: 'none', padding: 0 }}
-          >
+            className="relative flex items-center justify-center mb-12 bg-transparent border-none p-0"
+            >
             <img src={profilBaggrund} alt="Baggrund" className="w-[160px] h-[160px] object-contain" />
             <div className="absolute" style={{ bottom: '-100px' }}>
               <CharacterEmoji id={state.selectedCharacter} size={260} />

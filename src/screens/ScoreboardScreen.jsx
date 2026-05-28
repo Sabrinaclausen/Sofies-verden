@@ -27,15 +27,15 @@ export default function ScoreboardScreen() {
                 key={player.username}
                 className="flex items-center justify-between rounded-2xl px-5 py-4"
                 style={{
-                  background: player.isUser ? C.accent : '#1A1848',
+                  background: player.isUser ? C.accent : '#17143A',
                   border: player.isUser ? 'none' : `1.5px solid ${C.accent}`,
                 }}
               >
                 <div className="flex items-center gap-3">
-                  <span className={`text-sm font-black ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
+                  <span className={`text-base font-fredoka font-black ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
                     #{i + 1}
                   </span>
-                  <span className={`text-base font-extrabold ${player.isUser ? 'text-brand-dark' : 'text-white'}`}>
+                  <span className={`text-base font-extrabold ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
                     {player.username}
                   </span>
                 </div>

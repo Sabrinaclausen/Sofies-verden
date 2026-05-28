@@ -15,7 +15,7 @@ export default function CharacterSelectScreen() {
   return (
     <StarsWrapper>
       <div className="flex-1 flex flex-col items-center px-5 py-6 gap-5">
-        <p className="text-brand-accent text-2xl font-black">Vælg din karakter</p>
+        <h1 className="text-brand-accent flex justify-center text-4xl font-semibold font-fredoka mb-5">Vælg din karakter</h1>
 
         <div className="grid grid-cols-2 gap-3 w-full flex-1">
           {CHARACTERS.map((ch) => {
@@ -39,7 +39,7 @@ export default function CharacterSelectScreen() {
 
         <button
           onClick={handleVaelg}
-          className="w-full py-[18px] rounded-full text-lg font-black text-brand-dark"
+          className="w-full py-[18px] rounded-full text-lg font-black font-opensans text-brand-dark"
           style={{ background: C.accent, boxShadow: '0 4px 16px rgba(245,200,66,0.4)' }}
         >
           Vælg

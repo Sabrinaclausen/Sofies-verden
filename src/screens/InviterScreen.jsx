@@ -77,7 +77,7 @@ export default function InviterScreen() {
               value={search}
               onChange={e => setSearch(e.target.value)}
               placeholder="Søg..."
-              className="flex-1 bg-transparent text-white text-sm font-opensans placeholder:text-brand-sub/60"
+              className="flex-1 bg-transparent text-brand-sub text-sm font-opensans placeholder:text-brand-sub"
             />
             <SearchIcon />
           </div>
