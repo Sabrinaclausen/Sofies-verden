@@ -55,7 +55,7 @@ export function BottomNav({ active }) {
           <button
             key={item.id}
             onClick={() => navigate(item.id)}
-            className={`flex flex-col items-center gap-1 rounded-2xl px-5 py-2 mb-8 min-w-[115px] transition-all ${
+            className={`flex flex-col items-center gap-1 rounded-2xl px-5 py-2 mb-2 min-w-[115px] transition-all ${
               isActive ? 'bg-brand-accent' : 'bg-[#17143A]'
             }`}
             style={isActive ? {} : { border: '2px solid #F5C842' }}

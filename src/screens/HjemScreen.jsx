@@ -11,10 +11,10 @@ export default function HjemScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar rightIcon="gear" onRight={() => navigate('settings')} />
 
-        <div className="flex-1 flex flex-col items-center justify-between px-6 pt-4 pb-3">
+        <div className="flex-1 flex flex-col items-center px-6 pt-4 pb-3">
           {/* Points */}
           <div className="text-center">
-            <p className="text-brand-accent font-fredoka font-black leading-none mt-8"
+            <p className="text-brand-accent font-fredoka font-black leading-none mt-4"
                style={{ fontSize: 120, textShadow: '0 4px 20px rgba(245,200,66,0.4)' }}>
               {state.points}
             </p>
@@ -22,7 +22,7 @@ export default function HjemScreen() {
           </div>
 
           {/* Stat cards */}
-          <div className="flex gap-10 justify-center w-full">
+          <div className="flex gap-10 justify-center w-full mb-20 mt-20">
             <button
               onClick={() => navigate('badges')}
               className="w-[90px] bg-brand-navy rounded-xl text-center relative"
@@ -53,7 +53,7 @@ export default function HjemScreen() {
           {/* Character circle — tap to open character select */}
           <button
             onClick={() => openCharacterSelect('hjem')}
-            className="relative flex items-center justify-center mb-12 bg-transparent border-none p-0"
+            className="relative flex items-center justify-center mb-12 -mt-10 bg-transparent border-none p-0"
             >
             <img src={profilBaggrund} alt="Baggrund" className="w-[160px] h-[160px] object-contain" />
             <div className="absolute" style={{ bottom: '-100px' }}>
