@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '../AppContext';
 import cirkelLilla from '../assets/cirkel-lilla.png';
-import stjerneBaggrund from '../assets/stjerne-baggrund.png';
+import stjerneBaggrund from '../assets/stjerne-baggrund.jpg';
 import { CharacterEmoji } from '../components/shared';
 
 export default function StartsideScreen() {
@@ -52,7 +52,7 @@ export default function StartsideScreen() {
         <button
           onClick={() => { updateState({ girlLarge: true }); navigate('chapters'); }}
           className="w-full py-[18px] rounded-full text-lg font-black font-opensans text-brand-dark tracking-wide"
-          style={{ background: '#F5C842', boxShadow: '0 6px 20px rgba(245,200,66,0.45)' }}
+          style={{ background: '#F5C842', boxShadow: '0 6px 20px rgba(245,200,66,0.2)' }}
         >
           Play ▶
         </button>

@@ -1,16 +1,16 @@
 import React from 'react';
 import { useApp } from '../AppContext';
-import stjerneBaggrund from '../assets/stjerne-baggrund.png';
-import avatarDog from '../assets/avatar-hund.png';
-import avatarGingerbread from '../assets/avatar-gingerbread.png';
-import avatarOwl from '../assets/avatar-owl.png';
-import avatarCaveman from '../assets/avatar-caveman.png';
-import avatarHorse from '../assets/avatar-hest.png';
-import avatarCompass from '../assets/avatar-kompas.png';
+import stjerneBaggrund from '../assets/stjerne-baggrund.jpg';
+import avatarDog from '../assets/avatar-hund.webp';
+import avatarGingerbread from '../assets/avatar-gingerbread.webp';
+import avatarOwl from '../assets/avatar-owl.webp';
+import avatarCaveman from '../assets/avatar-caveman.webp';
+import avatarHorse from '../assets/avatar-hest.webp';
+import avatarCompass from '../assets/avatar-kompas.webp';
 import iconHome from '../assets/ikon-hus.png';
 import iconGear from '../assets/ikon-indstillinger.png';
 import iconProfil from '../assets/ikon-profil.png';
-import mountainBg from '../assets/mountain-baggrund.png';
+import mountainBg from '../assets/mountain-baggrund.webp';
 
 export const C = {
   bg: '#17143A',

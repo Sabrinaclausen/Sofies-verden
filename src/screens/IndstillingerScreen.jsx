@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, BottomNav, CharacterEmoji, C, PencilIcon } from '../components/shared';
-import profilBaggrund from '../assets/profil-baggrund.png';
+import profilBaggrund from '../assets/profil-baggrund.webp';
 
 function Toggle({ on, onToggle }) {
   return (

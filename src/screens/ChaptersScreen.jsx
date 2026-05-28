@@ -2,15 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, C } from '../components/shared';
 import { CHAPTERS } from '../data';
-import sofieImg from '../assets/sofie-startside.png';
-import kapitelGrotte from '../assets/kapitel-grotte.png';
-import kapitelAkademi from '../assets/kapitel-akademi.png';
-import kapitelDetEvige from '../assets/kapitel-detevige.png';
-import kapitelIdeernesVerden from '../assets/kapitel-ideernesverden.png';
-import kapitelUdodelig from '../assets/kapitel-udodelig.png';
-import kapitelSikkerViden from '../assets/kapitel-sikkerviden.png';
-import kapitelFilosofistaten from '../assets/kapitel-filosofistaten.png';
-import sofieVinkerImg from '../assets/sofie-vinker.png';
+import sofieImg from '../assets/sofie-startside.webp';
+import kapitelGrotte from '../assets/kapitel-grotte.webp';
+import kapitelAkademi from '../assets/kapitel-akademi.webp';
+import kapitelDetEvige from '../assets/kapitel-detevige.webp';
+import kapitelIdeernesVerden from '../assets/kapitel-ideernesverden.webp';
+import kapitelUdodelig from '../assets/kapitel-udodelig.webp';
+import kapitelSikkerViden from '../assets/kapitel-sikkerviden.webp';
+import kapitelFilosofistaten from '../assets/kapitel-filosofistaten.webp';
+import sofieVinkerImg from '../assets/sofie-vinker.webp';
 
 const GIRL_SPEECH = 'Hej! Jeg er Sofie. Lad os lære om Platons hulelignelse! Klik på det første kapitel for at begynde vores rejse.';
 

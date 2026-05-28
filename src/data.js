@@ -1,9 +1,9 @@
-import avatarDog from './assets/avatar-hund.png';
-import avatarGingerbread from './assets/avatar-gingerbread.png';
-import avatarOwl from './assets/avatar-owl.png';
-import avatarCaveman from './assets/avatar-caveman.png';
-import avatarHorse from './assets/avatar-hest.png';
-import avatarCompass from './assets/avatar-kompas.png';
+import avatarDog from './assets/avatar-hund.webp';
+import avatarGingerbread from './assets/avatar-gingerbread.webp';
+import avatarOwl from './assets/avatar-owl.webp';
+import avatarCaveman from './assets/avatar-caveman.webp';
+import avatarHorse from './assets/avatar-hest.webp';
+import avatarCompass from './assets/avatar-kompas.webp';
 
 export const LESSON_LEVELS = [
   {

@@ -1,14 +1,14 @@
 import React from 'react';
 import { useApp } from '../AppContext';
 import { TopBar } from '../components/shared';
-import mapBg    from '../assets/spil-map.png';
-import levelEt   from '../assets/level-et.png';
-import levelTo   from '../assets/level-to.png';
-import levelTre  from '../assets/level-tre.png';
-import levelFire from '../assets/level-fire.png';
-import levelFem  from '../assets/level-fem.png';
-import levelSeks from '../assets/level-seks.png';
-import levelSyv  from '../assets/level-syv.png';
+import mapBg    from '../assets/spil-map.webp';
+import levelEt   from '../assets/level-et.webp';
+import levelTo   from '../assets/level-to.webp';
+import levelTre  from '../assets/level-tre.webp';
+import levelFire from '../assets/level-fire.webp';
+import levelFem  from '../assets/level-fem.webp';
+import levelSeks from '../assets/level-seks.webp';
+import levelSyv  from '../assets/level-syv.webp';
 
 const LEVEL_IMAGES = [levelEt, levelTo, levelTre, levelFire, levelFem, levelSeks, levelSyv];
 

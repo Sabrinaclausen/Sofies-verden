@@ -2,7 +2,7 @@ import React from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, C } from '../components/shared';
 import { QUIZ_QUESTIONS } from '../data';
-import pokal from '../assets/pokal.png';
+import pokal from '../assets/pokal.webp';
 import badge from '../assets/grotte-badges.png';
 
 function getStars(correct) {

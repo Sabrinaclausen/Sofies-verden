@@ -1,7 +1,7 @@
 import React from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, BottomNav, CharacterEmoji, C } from '../components/shared';
-import profilBaggrund from '../assets/profil-baggrund.png';
+import profilBaggrund from '../assets/profil-baggrund.webp';
 
 export default function HjemScreen() {
   const { state, navigate, openCharacterSelect } = useApp();
