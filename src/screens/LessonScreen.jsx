@@ -20,13 +20,12 @@ export default function LessonScreen() {
   const isLastBubble = visibleCount === step.bubbles.length - 1;
   const allDone = typingDone && isLastBubble;
 
-  // Reset when lesson step changes
   useEffect(() => {
     setSkipped(false);
     setVisibleCount(0);
   }, [state.currentStep]);
 
-  // Typewriter — reruns when bubble index, skip state, or step changes
+
   useEffect(() => {
     setTypedText('');
     setTypingDone(false);
@@ -57,7 +56,7 @@ export default function LessonScreen() {
     };
   }, [visibleCount, skipped, state.currentStep]);
 
-  // Auto-advance to next bubble
+ 
   useEffect(() => {
     if (typingDone && !isLastBubble && !skipped) {
       advanceRef.current = setTimeout(() => setVisibleCount(v => v + 1), 500);
@@ -78,8 +77,6 @@ export default function LessonScreen() {
     {/* Baggrundsbillede */}
     <MountainScene />
 
-    {/* Mørkt overlay */}
-    <div className="absolute inset-0 z-[1] bg-[rgba(8,6,26,0.55)]" />
 
     {/* Alt indhold ovenpå */}
     <div className="absolute inset-0 z-10 flex flex-col">
@@ -102,10 +99,10 @@ export default function LessonScreen() {
         </span>
       </div>
 
-      {/* Chat area */}
+      {/* messenger */}
       <div className="flex-1 relative overflow-hidden px-5 pt-4 pb-2">
 
-        {/* Avatar — fast position */}
+        {/* Profilbillede */}
         <img
           src={profileImg}
           alt="Sofie"
@@ -113,7 +110,7 @@ export default function LessonScreen() {
           className="absolute bottom-2 left-5 w-10 h-10 rounded-full object-cover z-10"
         />
 
-        {/* Bobler — pinned til bund */}
+        {/* messenger bobler */}
         <div className="h-full flex flex-col justify-end gap-3 pl-[52px]">
 
           {/* Færdige bobler */}
@@ -148,7 +145,7 @@ export default function LessonScreen() {
         </div>
       </div>
 
-      {/* Skip / Til quiz knap */}
+      {/* Skip/forsæt knap */}
       <div className="flex items-center justify-end px-5 pt-2 pb-5 flex-shrink-0 min-h-[72px]">
         {!allDone ? (
           <button

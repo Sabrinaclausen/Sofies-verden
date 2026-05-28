@@ -3,7 +3,7 @@ import { useApp } from '../AppContext';
 import gameCenterIcon from '../assets/gamecenter.png';
 import gyldendalLogo from '../assets/gyldendal-logo.png';
 
-// phases: 'in' → slide down, 'visible' → pause, 'out' → slide up, 'done' → content appears
+
 export default function LoginScreen() {
   const { navigate } = useApp();
   const [phase, setPhase] = useState('in');
@@ -23,7 +23,7 @@ export default function LoginScreen() {
   return (
     <div className="absolute inset-0 bg-[#F2F2F2] overflow-hidden flex flex-col items-center justify-between py-5">
 
-      {/* Game Center knap — notification */}
+      {/* Game Center knap — push notification */}
       {phase !== 'done' && (
         <div className="absolute top-4 left-4 right-4 z-50 flex justify-center" style={notifAnim}>
           <button
@@ -55,7 +55,7 @@ export default function LoginScreen() {
       </div>
     </div>
 
-      {/* Forsæt button */}
+      {/* Forsæt knap */}
       <div className="w-full px-8" style={{marginTop: '-150px'}}>
         <button
           onClick={() => navigate('startside')}
@@ -66,7 +66,7 @@ export default function LoginScreen() {
         </button>
       </div>
 
-      {/* Terms */}
+      {/* Betingelser */}
       <p className=" text-[#666]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
         Læs vilkår og betingelser{' '}
         <span className="underline text-[#444] cursor-pointer">her</span>

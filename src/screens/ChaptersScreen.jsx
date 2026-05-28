@@ -86,14 +86,14 @@ const expandGirl = () => updateState({ girlLarge: true });
       <div className="flex-1 flex flex-col overflow-hidden relative">
         <TopBar />
 
-        {/* Chapter grid */}
+        {/* kapitel grid */}
         <div className={`scrollable flex-1 px-4 pt-4 pb-5 ${state.girlLarge ? 'pointer-events-none' : ''}`}>
           <h1 className="text-brand-accent text-5xl font-semibold mb-0.5 font-fredoka">Velkommen</h1>
           <p className="text-[#F0EAFF] text-base font-semibold font-opensans mb-4">Vælg et kapitel for at starte et spil</p>
 
           <div className="grid grid-cols-2 gap-2.5">
             
-            {/* Cave — stor venstre kort */}
+            {/* Hulelignelsen */}
             <div className="row-span-2 flex flex-col">
               <button
                 onClick={handleCaveClick}
@@ -109,7 +109,7 @@ const expandGirl = () => updateState({ girlLarge: true });
                   {CHAPTERS[0].title}
                 </p>
                 <div className="absolute bottom-2 right-2 w-7 h-7 rounded-full flex items-center justify-center bg-white/20">
-                  <span className="text-base ml-px">▶</span>
+                  <span className="text-base ml-px">▶&#xFE0E;</span>
                 </div>
               </button>
             </div>
@@ -126,7 +126,7 @@ const expandGirl = () => updateState({ girlLarge: true });
           </div>
         </div>
 
-        {/* Sofie overlay — stor */}
+        {/* Sofie i stor */}
         {state.girlLarge && (
           <div
             className="absolute inset-0 z-20 flex flex-col justify-end"
@@ -168,7 +168,7 @@ const expandGirl = () => updateState({ girlLarge: true });
           </div>
         )}
 
-        {/* Sofie lille — nederst til venstre */}
+        {/* Sofie i lille*/}
         {!state.girlLarge && (
           <button
             onClick={expandGirl}

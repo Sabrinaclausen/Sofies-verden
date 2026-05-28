@@ -36,7 +36,7 @@ export default function IndstillingerScreen() {
         <div className="scrollable flex-1 px-5 pt-5 pb-5">
           <h1 className="text-brand-accent text-5xl font-semibold font-fredoka mb-16">Indstillinger</h1>
 
-          {/* Avatar */}
+          {/* Avatar/Character */}
           <div className="flex justify-center mb-16">
             <div className="relative">
               <div className="w-36 h-36 rounded-full flex items-center justify-center border-white/10 overflow-hidden relative">

@@ -53,7 +53,7 @@ export default function InviterScreen() {
         <div className="scrollable flex-1 px-5 pt-12 pb-3">
           <h1 className="text-brand-accent flex justify-center text-5xl font-semibold font-fredoka mb-4">Inviter venner</h1>
 
-          {/* Tabs */}
+          {/* Venner knapper */}
           <div className="flex gap-5 mb-6 mt-6">
             <button
               onClick={() => navigate('venner')}
@@ -72,7 +72,7 @@ export default function InviterScreen() {
             </button>
           </div>
 
-          {/* Search */}
+          {/* søgebar */}
           <div className="flex items-center gap-2.5 bg-brand-navy rounded-xl px-3.5 py-2.5 mb-4 border border-white/10">
             <input
               value={search}
@@ -83,7 +83,7 @@ export default function InviterScreen() {
             <SearchIcon />
           </div>
 
-          {/* User list */}
+          {/* venne liste */}
           <div className="flex flex-col gap-2.5">
             {filtered.map((u, i) => {
               const isSent = (state.addedUsers || []).includes(u.username);

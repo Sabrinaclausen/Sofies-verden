@@ -39,7 +39,7 @@ export default function VennerScreen() {
         <div className="scrollable flex-1 px-5 pt-12 pb-3">
           <h1 className="text-brand-accent flex justify-center text-5xl font-semibold font-fredoka mb-4">Venner</h1>
 
-          {/* Tabs */}
+          {/* venner knap */}
           <div className="flex gap-5 mb-6 mt-6">
             <button className="flex-1 py-2 rounded-xl text-brand-dark text-base font-opensans relative overflow-hidden flex flex-col items-center justify-center"
               style={{ background: C.accent }}>
@@ -56,7 +56,7 @@ export default function VennerScreen() {
             </button>
           </div>
 
-          {/* Friends list from state */}
+          {/* venne liste */}
           <div className="flex flex-col gap-2.5">
             {state.friendsList.map((f, i) => (
               <div key={i} className="flex items-center justify-between bg-brand-navy rounded-2xl px-4 py-3"

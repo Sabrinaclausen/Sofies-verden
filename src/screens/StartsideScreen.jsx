@@ -18,7 +18,7 @@ export default function StartsideScreen() {
     >
 
       <div className="flex-1 flex flex-col items-center justify-between px-8 py-12 relative">
-        {/* Brand */}
+
         <div className="flex flex-col items-center gap-1">
           <p className="text-white text-[13px] font-opensans font-semibold tracking-[2px] opacity-80 mt-16">GYLDENDAL</p>
           <div className="flex flex-col items-center leading-tight">
@@ -28,10 +28,10 @@ export default function StartsideScreen() {
         </div>
 
   
-  {/* Character circle */}
+  {/* Character cirkel */}
   <div className="relative inline-flex items-center justify-center my-24">
   
-    {/* Baggrundscirkel med blyant — klikker åbner character select */}
+    {/* Baggrundscirkel med blyant*/}
     <button
       onClick={() => openCharacterSelect('startside')}
       className="bg-transparent border-none p-0"
@@ -42,7 +42,7 @@ export default function StartsideScreen() {
     />
     </button>
 
-    {/* Hund */}
+    {/* Hund/avatar */}
     <div className="absolute">
       <CharacterEmoji id={state.selectedCharacter} size={130} />
     </div>
@@ -54,7 +54,7 @@ export default function StartsideScreen() {
           className="w-full py-[18px] rounded-full text-lg font-black font-opensans text-brand-dark tracking-wide"
           style={{ background: '#F5C842', boxShadow: '0 6px 20px rgba(245,200,66,0.2)' }}
         >
-          Play ▶
+          Play ▶&#xFE0E;
         </button>
 
       </div>

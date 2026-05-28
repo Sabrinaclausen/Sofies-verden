@@ -11,8 +11,8 @@ export default function HjemScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar rightIcon="gear" onRight={() => navigate('settings')} />
 
-        <div className="flex-1 flex flex-col items-center px-6 pt-4 pb-3">
-          {/* Points */}
+        <div className="flex-1 flex flex-col items-center justify-around px-6 pt-4 pb-3">
+          {/* Point */}
           <div className="text-center">
             <p className="text-brand-accent font-fredoka font-black leading-none mt-4"
                style={{ fontSize: 120, textShadow: '0 4px 20px rgba(245,200,66,0.4)' }}>
@@ -21,8 +21,8 @@ export default function HjemScreen() {
             <p className="text-brand-sub text-3xl font-fredoka font-semibold mt-1">Point</p>
           </div>
 
-          {/* Stat cards */}
-          <div className="flex gap-10 justify-center w-full mb-20 mt-20">
+          {/* Små stats kort */}
+          <div className="flex gap-10 justify-center w-full z-10 relative">
             <button
               onClick={() => navigate('badges')}
               className="w-[90px] bg-brand-navy rounded-xl text-center relative"
@@ -50,7 +50,7 @@ export default function HjemScreen() {
             </button>
           </div>
 
-          {/* Character circle — tap to open character select */}
+          {/* Character cirkel */}
           <button
             onClick={() => openCharacterSelect('hjem')}
             className="relative flex items-center justify-center mb-12 -mt-10 bg-transparent border-none p-0"

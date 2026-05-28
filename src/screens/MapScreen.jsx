@@ -42,7 +42,7 @@ export default function MapScreen() {
   return (
     <div className="w-full h-full relative overflow-hidden">
 
-      {/* Full-screen map background */}
+      {/* Map baggrung */}
       <img
         src={mapBg}
         alt=""
@@ -50,7 +50,7 @@ export default function MapScreen() {
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
-      {/* Top bar — identical to chapters screen */}
+      {/* Top nav */}
       <div className="absolute top-0 left-0 right-0 z-10">
         <TopBar />
       </div>
@@ -63,7 +63,7 @@ export default function MapScreen() {
         className="block absolute top-0 left-0 z-[1]"
         preserveAspectRatio="xMidYMid slice"
       >
-        {/* Clip paths for rounded node images */}
+
         <defs>
           {NODES.map(({ n, cx, cy }) => (
             <clipPath key={n} id={`lvlClip${n}`}>
@@ -72,7 +72,7 @@ export default function MapScreen() {
           ))}
         </defs>
 
-        {/* Nodes */}
+        {/* levels */}
         {NODES.map(({ n, cx, cy }) => {
           const stepIdx = n - 1;
           const result = nodeResults[stepIdx];
@@ -92,7 +92,7 @@ export default function MapScreen() {
               />
 
 
-              {/* Result indicator below the node */}
+              {/* Resultat af spørgsmål */}
               {hasResult && (
                 <text
                   x={cx} y={y + NODE_H + 1}
@@ -104,7 +104,6 @@ export default function MapScreen() {
                 </text>
               )}
 
-              {/* Expanded hit area */}
               <rect x={x - 6} y={y - 6} width={NODE_W + 12} height={NODE_H + 12} fill="transparent" />
             </g>
           );
@@ -112,7 +111,7 @@ export default function MapScreen() {
 
       </svg>
 
-      {/* Start button */}
+      {/* Start knap */}
       <div
         className="absolute bottom-0 left-0 right-0 px-8 pt-3 pb-6"
         style={{ background: 'linear-gradient(to top, rgba(8,6,26,0.9) 70%, transparent)', zIndex: 2 }}

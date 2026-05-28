@@ -83,15 +83,15 @@ export default function QuizScreen() {
   return (
     <div className="w-full h-full relative overflow-hidden">
 
-      {/* Full-screen background */}
+
       <MountainScene />
       <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(8,6,26,0.55)' }} />
 
-      {/* UI layer */}
+
       <div className="absolute inset-0 z-10 flex flex-col">
         <TopBar />
 
-        {/* Progress */}
+        {/* Progress bar */}
         <div className="flex items-center gap-2 px-4 pb-2 flex-shrink-0">
           <span className="text-brand-sub text-xs font-opensans font-bold whitespace-nowrap min-w-[44px]">
             {qi + 1} af {TOTAL_STEPS}
@@ -105,10 +105,9 @@ export default function QuizScreen() {
           </span>
         </div>
 
-        {/* Spacer — pushes content to bottom */}
         <div className="flex-1" />
 
-        {/* Question card + answers — anchored to bottom */}
+        {/* Spørgsmål og svar */}
         <div className="px-4 pb-2 flex flex-col gap-2">
           <div
             className="rounded-2xl px-8 py-9 text-white text-base font-opensans leading-snug flex-shrink-0"
@@ -147,7 +146,7 @@ export default function QuizScreen() {
           })}
         </div>
 
-        {/* Svar / Næste button */}
+        {/* Svar/næste knap */}
         <div className="px-5 pt-2 pb-5 flex-shrink-0">
           {!revealed ? (
             <button

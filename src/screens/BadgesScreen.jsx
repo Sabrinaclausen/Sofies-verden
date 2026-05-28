@@ -42,7 +42,7 @@ export default function BadgesScreen() {
             </div>
           </div>
 
-          {/* Badge card — only show after quiz completed */}
+          {/* Badge kort — optjenes når quiz er gennemført */}
           {state.quizCompleted ? (
             <div className="w-full bg-brand-navy rounded-2xl px-4 py-3 flex items-center gap-3 border border-white/[0.08]">
             <img src={badge} alt="Badge" className="w-10 h-10 object-contain" />
