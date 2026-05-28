@@ -169,13 +169,6 @@ export const SCOREBOARD = [
   { username: 'CoolDragon99', xp: 200 },
 ];
 
-export const FRIENDS = [
-  { username: 'CoolDragon99', xp: 200, emoji: 'compass' },
-  { username: 'NinjaKat2014', xp: 280, emoji: 'hund' },
-  { username: 'ProGamer_Luca', xp: 280, emoji: 'gingerbread' },
-  { username: 'xXDarkWolfXx', xp: 360, emoji: 'hund' },
-];
-
 export const INVITE_USERS = [
   { username: 'SuperSofie123', emoji: 'gingerbread' },
   { username: 'GamerPigen_Fre', emoji: 'caveboy' },

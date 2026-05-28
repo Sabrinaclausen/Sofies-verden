@@ -7,6 +7,8 @@ import profilOwl from '../assets/profil-ugle.png';
 import profilCaveman from '../assets/profil-cavemann.png';
 import profilHest from '../assets/profil-hest.png';
 import profilKompas from '../assets/profil-kompass.png';
+import addFriend from '../assets/addfriend.png';
+import friend from '../assets/friend-aktiv.png';
 
 const AVATAR_MAP = {
   dog: profilHund,
@@ -34,20 +36,22 @@ export default function VennerScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />
 
-        <div className="scrollable flex-1 px-5 pt-1 pb-3">
-          <h1 className="text-brand-accent text-4xl font-black mb-4">Venner</h1>
+        <div className="scrollable flex-1 px-5 pt-5 pb-3">
+          <h1 className="text-brand-accent text-4xl font-black font-fredoka mb-4">Venner</h1>
 
           {/* Tabs */}
-          <div className="flex gap-2.5 mb-5">
-            <button className="flex-1 py-3 rounded-xl text-brand-dark text-sm font-extrabold"
-                    style={{ background: C.accent }}>
-              Venner
+          <div className="flex gap-5 mb-5">
+            <button className="flex-1 py-2 rounded-xl text-brand-dark text-base font-opensans relative overflow-hidden flex flex-col items-center justify-center"
+              style={{ background: C.accent }}>
+              <img src={friend} alt="" className="h-14 w-14 object-contain" />
+              <span className="relative z-10 -mt-2">Venner</span>
             </button>
             <button
               onClick={() => navigate('inviter')}
-              className="flex-1 py-3 rounded-xl text-white text-sm font-extrabold bg-brand-navy border border-white/10"
+              className="flex-1 py-2 rounded-xl text-brand-sub text-base font-opensans bg-brand-navy border relative overflow-hidden flex flex-col items-center justify-center"
             >
-              Inviter venner
+              <img src={addFriend} alt="" className="h-14 w-14 object-contain" />
+              <span className="relative z-10 -mt-2">Inviter venner</span>
             </button>
           </div>
 

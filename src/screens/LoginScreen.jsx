@@ -9,14 +9,14 @@ export default function LoginScreen() {
   const [phase, setPhase] = useState('in');
 
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase('visible'), 4400);
-    const t2 = setTimeout(() => setPhase('out'), 7400);
-    const t3 = setTimeout(() => setPhase('done'), 7800);
+    const t1 = setTimeout(() => setPhase('visible'), 2400);
+    const t2 = setTimeout(() => setPhase('out'), 5400);
+    const t3 = setTimeout(() => setPhase('done'), 5800);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
   const notifAnim =
-    phase === 'in'  ? { animation: 'notifDown 0.4s ease 2s forwards', transform: 'translateY(-200%)' } :
+    phase === 'in'  ? { animation: 'notifDown 0.4s ease 1s forwards', transform: 'translateY(-200%)' } :
     phase === 'out' ? { animation: 'notifUp 0.4s ease forwards' } :
   {};
 

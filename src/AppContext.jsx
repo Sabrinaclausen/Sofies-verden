@@ -17,8 +17,10 @@ const initialState = {
   characterSelectOrigin: 'startside',
   mapQuizMode: false,
   girlLarge: false,
+  addedUsers: [],
   friendsList: [
     { username: 'CoolDragon99', xp: 200, emoji: 'compass' },
+    { username: 'MinecraftKing7', xp: 240, emoji: 'caveboy' },
     { username: 'NinjaKat2014', xp: 280, emoji: 'hund' },
     { username: 'ProGamer_Luca', xp: 280, emoji: 'gingerbread' },
     { username: 'xXDarkWolfXx', xp: 360, emoji: 'hund' },

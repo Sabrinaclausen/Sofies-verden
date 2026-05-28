@@ -9,8 +9,9 @@ export default function ScoreboardScreen() {
 
   const board = [
     ...SCOREBOARD.filter(p => !p.isUser),
+    ...state.friendsList.filter(f => !SCOREBOARD.find(s => s.username === f.username)),
     { username: state.username, xp: userXp, isUser: true },
-  ].sort((a, b) => b.xp - a.xp);
+    ].sort((a, b) => b.xp - a.xp);
 
   return (
     <StarsWrapper>
@@ -18,7 +19,7 @@ export default function ScoreboardScreen() {
         <TopBar />
 
         <div className="scrollable flex-1 px-5 pt-1 pb-3">
-          <h1 className="text-brand-accent text-4xl font-black mb-5">Scoreboard</h1>
+          <h1 className="text-brand-accent text-4xl font-black font-fredoka mb-5">Scoreboard</h1>
 
           <div className="flex flex-col gap-2.5">
             {board.map((player, i) => (
