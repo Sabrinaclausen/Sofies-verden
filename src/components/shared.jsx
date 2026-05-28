@@ -13,12 +13,12 @@ import iconProfil from '../assets/ikon-profil.png';
 import mountainBg from '../assets/mountain-baggrund.png';
 
 export const C = {
-  bg: '#0D0B2B',
-  card: '#2D2A6E',
+  bg: '#17143A',
+  card: '#2D1F6E',
   accent: '#F5C842',
   green: '#22C55E',
   text: '#FFFFFF',
-  sub: '#C4BFEF',
+  sub: '#F0EAFF',
   navActive: '#F5C842',
   btnInactive: '#C4BFEF',
 };
@@ -93,35 +93,6 @@ export function StarsWrapper({ children, style }) {
   );
 }
 
-function StarField() {
-  const stars = [
-    [45,8],[88,15],[130,5],[178,20],[215,9],[258,16],[302,7],[348,22],[392,11],[420,18],
-    [22,32],[67,38],[112,28],[155,44],[198,35],[242,40],[285,30],[330,46],[375,36],[418,42],
-    [10,58],[55,65],[98,52],[140,70],[183,60],[225,68],[268,55],[310,72],[355,62],[400,68],
-    [35,85],[80,92],[125,80],[168,96],[210,88],[252,94],[295,82],[338,98],[382,86],[415,92],
-    [18,112],[60,118],[103,108],[148,124],[190,115],[235,122],[278,110],[322,126],[366,116],[408,122],
-    [28,140],[72,148],[116,136],[160,152],[204,142],[248,150],[292,138],[336,154],[380,144],[412,150],
-    [8,168],[52,176],[96,164],[142,180],[186,170],[230,178],[274,166],[318,182],[362,172],[405,178],
-    [42,198],[86,206],[130,194],[174,210],[218,200],[262,208],[306,196],[350,212],[394,202],[418,208],
-  ];
-  return (
-    <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-      {stars.map(([x, y], i) => (
-        <div key={i} style={{
-          position: 'absolute',
-          left: `${(x / 430) * 100}%`,
-          top: y,
-          width: i % 5 === 0 ? 2 : i % 3 === 0 ? 1.5 : 1,
-          height: i % 5 === 0 ? 2 : i % 3 === 0 ? 1.5 : 1,
-          borderRadius: '50%',
-          background: 'white',
-          opacity: 0.4 + (i % 5) * 0.12,
-        }} />
-      ))}
-    </div>
-  );
-}
-
 
 export function MountainScene({ fullscreen = false }) {
   return (
@@ -141,6 +112,7 @@ export function CharacterEmoji({ id, size = 60 }) {
     horse: avatarHorse, 
     compass: avatarCompass 
   };
+  
   return <img src={map[id] || avatarDog} alt={id} style={{ width: size, height: size, objectFit: 'contain' }} />;
 }
 

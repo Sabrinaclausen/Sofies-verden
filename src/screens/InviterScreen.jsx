@@ -2,12 +2,27 @@ import React, { useState } from 'react';
 import { useApp } from '../AppContext';
 import { StarsWrapper, TopBar, BottomNav, SearchIcon, C } from '../components/shared';
 import { INVITE_USERS } from '../data';
+import profilHund from '../assets/profil-huns.png';
+import profilGingerbread from '../assets/profil-gingerbread.png';
+import profilOwl from '../assets/profil-ugle.png';
+import profilCaveman from '../assets/profil-cavemann.png';
+import profilHest from '../assets/profil-hest.png';
+import profilKompas from '../assets/profil-kompass.png';
 
-function AvatarCircle({ emoji, size = 40 }) {
+const AVATAR_MAP = {
+  dog: profilHund,
+  gingerbread: profilGingerbread,
+  owl: profilOwl,
+  caveboy: profilCaveman,
+  horse: profilHest,
+  compass: profilKompas,
+};
+
+function AvatarCircle({ avatarId, size = 40 }) {
   return (
-    <div className="rounded-full bg-brand-card border-2 border-white/10 flex items-center justify-center flex-shrink-0"
-         style={{ width: size, height: size, fontSize: size * 0.5 }}>
-      {emoji}
+    <div className="rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden"
+         style={{ width: size, height: size }}>
+      <img src={AVATAR_MAP[avatarId] || profilHund} alt="avatar" className="w-full h-full object-cover" />
     </div>
   );
 }
@@ -66,7 +81,7 @@ export default function InviterScreen() {
               <div key={i} className="flex items-center justify-between bg-brand-navy rounded-2xl px-4 py-3"
                    style={{ border: `1.5px solid ${C.accent}` }}>
                 <div className="flex items-center gap-3">
-                  <AvatarCircle emoji={u.emoji} />
+                  <AvatarCircle avatarId={u.emoji} />
                   <span className="text-white text-sm font-bold">{u.username}</span>
                 </div>
                 <button

@@ -18,15 +18,15 @@ const initialState = {
   mapQuizMode: false,
   girlLarge: false,
   friendsList: [
-    { username: 'CoolDragon99', xp: 200, emoji: '🐱' },
-    { username: 'NinjaKat2014', xp: 280, emoji: '🐶' },
-    { username: 'ProGamer_Luca', xp: 280, emoji: '🦊' },
-    { username: 'xXDarkWolfXx', xp: 360, emoji: '🐺' },
+    { username: 'CoolDragon99', xp: 200, emoji: 'compass' },
+    { username: 'NinjaKat2014', xp: 280, emoji: 'hund' },
+    { username: 'ProGamer_Luca', xp: 280, emoji: 'gingerbread' },
+    { username: 'xXDarkWolfXx', xp: 360, emoji: 'hund' },
   ],
   friendRequestsList: [
-    { username: 'PizzaLover_Max', emoji: '🐶' },
-    { username: 'LegendaryHero77', emoji: '🐶' },
-    { username: 'SkateKing_Noah', emoji: '🐶' },
+    { username: 'PizzaLover_Max', emoji: 'owl' },
+    { username: 'LegendaryHero77', emoji: 'horse' },
+    { username: 'SkateKing_Noah', emoji: 'hund' },
   ],
 };
 

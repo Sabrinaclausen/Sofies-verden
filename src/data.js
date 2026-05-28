@@ -170,20 +170,20 @@ export const SCOREBOARD = [
 ];
 
 export const FRIENDS = [
-  { username: 'CoolDragon99', xp: 200, emoji: '🐱' },
-  { username: 'NinjaKat2014', xp: 280, emoji: '🐶' },
-  { username: 'ProGamer_Luca', xp: 280, emoji: '🦊' },
-  { username: 'xXDarkWolfXx', xp: 360, emoji: '🐺' },
+  { username: 'CoolDragon99', xp: 200, emoji: 'compass' },
+  { username: 'NinjaKat2014', xp: 280, emoji: 'hund' },
+  { username: 'ProGamer_Luca', xp: 280, emoji: 'gingerbread' },
+  { username: 'xXDarkWolfXx', xp: 360, emoji: 'hund' },
 ];
 
 export const INVITE_USERS = [
-  { username: 'SuperSofie123', emoji: '🍪' },
-  { username: 'GamerPigen_Fre', emoji: '🦉' },
-  { username: 'NoobSlayer2000', emoji: '🧒' },
+  { username: 'SuperSofie123', emoji: 'gingerbread' },
+  { username: 'GamerPigen_Fre', emoji: 'caveboy' },
+  { username: 'NoobSlayer2000', emoji: 'compass' },
 ];
 
 export const FRIEND_REQUESTS_DATA = [
-  { username: 'PizzaLover_Max', emoji: '🐶' },
-  { username: 'LegendaryHero77', emoji: '🐶' },
-  { username: 'SkateKing_Noah', emoji: '🐶' },
+  { username: 'PizzaLover_Max', emoji: 'owl' },
+  { username: 'LegendaryHero77', emoji: 'horse' },
+  { username: 'SkateKing_Noah', emoji: 'hund' },
 ];
