@@ -50,11 +50,11 @@ export default function InviterScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />
 
-        <div className="scrollable flex-1 px-5 pt-5 pb-3">
-          <h1 className="text-brand-accent text-4xl font-black font-fredoka mb-4">Inviter venner</h1>
+        <div className="scrollable flex-1 px-5 pt-12 pb-3">
+          <h1 className="text-brand-accent flex justify-center text-5xl font-semibold font-fredoka mb-4">Inviter venner</h1>
 
           {/* Tabs */}
-          <div className="flex gap-5 mb-4">
+          <div className="flex gap-5 mb-6 mt-6">
             <button
               onClick={() => navigate('venner')}
               className="flex-1 py-2 rounded-xl text-brand-sub text-base font-opensans bg-brand-navy border relative overflow-hidden flex flex-col items-center justify-center"
@@ -91,12 +91,11 @@ export default function InviterScreen() {
                      style={{ border: `1.5px solid ${C.accent}` }}>
                   <div className="flex items-center gap-3">
                     <AvatarCircle avatarId={u.emoji} />
-                    <span className="text-white text-sm font-bold">{u.username}</span>
+                    <span className="text-brand-sub text-base font-fredoka">{u.username}</span>
                   </div>
                   <button
                     onClick={() => toggle(u)}
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-xl font-black text-green-400"
-                    style={{ background: isSent ? '#1A5C3A' : '#166534' }}
+                    className="w-9 h-9 rounded-full flex items-center justify-center text-2xl font-fredoka font-semibold text-green-400"
                   >
                     {isSent ? '✓' : '+'}
                   </button>

@@ -18,28 +18,28 @@ export default function ScoreboardScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />
 
-        <div className="scrollable flex-1 px-5 pt-1 pb-3">
-          <h1 className="text-brand-accent text-4xl font-black font-fredoka mb-5">Scoreboard</h1>
+        <div className="scrollable flex-1 px-5 pt-16 pb-3">
+          <h1 className="text-brand-accent flex justify-center text-5xl font-semibold font-fredoka mb-8">Scoreboard</h1>
 
           <div className="flex flex-col gap-2.5">
             {board.map((player, i) => (
               <div
                 key={player.username}
-                className="flex items-center justify-between rounded-2xl px-5 py-4"
+                className={`flex items-center justify-between rounded-2xl px-5 py-4 ${player.isUser ? '' : 'bg-brand-navy'}`}
                 style={{
-                  background: player.isUser ? C.accent : '#17143A',
+                  background: player.isUser ? C.accent : undefined,
                   border: player.isUser ? 'none' : `1.5px solid ${C.accent}`,
                 }}
               >
                 <div className="flex items-center gap-3">
-                  <span className={`text-base font-fredoka font-black ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
+                  <span className={`text-base font-fredoka ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
                     #{i + 1}
                   </span>
-                  <span className={`text-base font-extrabold ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
+                  <span className={`text-base font-fredoka ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
                     {player.username}
                   </span>
                 </div>
-                <span className={`text-sm font-bold ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
+                <span className={`text-base font-fredoka ${player.isUser ? 'text-brand-dark' : 'text-brand-sub'}`}>
                   {player.xp}xp
                 </span>
               </div>

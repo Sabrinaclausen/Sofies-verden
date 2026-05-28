@@ -20,8 +20,6 @@ export default function LoginScreen() {
     phase === 'out' ? { animation: 'notifUp 0.4s ease forwards' } :
   {};
 
-  const showContent = phase === 'done';
-
   return (
     <div className="absolute inset-0 bg-[#F2F2F2] overflow-hidden flex flex-col items-center justify-between py-5">
 
@@ -32,8 +30,8 @@ export default function LoginScreen() {
             className="w-60 flex items-center gap-2 bg-white rounded-3xl px-5 py-2.5"
             style={{ border: '1px solid #E0E0E0', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}
           >
-            <img src={gameCenterIcon} alt="Game Center" style={{ width: 28, height: 28 }} />
-            <span className="text-sm font-semibold text-[#333]" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+            <img src={gameCenterIcon} alt="Game Center" className="w-7 h-7" />
+            <span className="text-sm font-opensans font-semibold text-[#333]">
               Log ind på Game Center
             </span>
           </button>
@@ -61,8 +59,8 @@ export default function LoginScreen() {
       <div className="w-full px-8" style={{marginTop: '-150px'}}>
         <button
           onClick={() => navigate('startside')}
-          className="w-full py-[18px] rounded-full text-lg font-extrabold text-[#1A1A1A]"
-          style={{ background: '#F5C842', boxShadow: '0 4px 12px rgba(245,200,66,0.4)', fontFamily: 'Nunito, sans-serif' }}
+          className="w-full py-[18px] rounded-full text-lg font-black font-opensans text-brand-dark"
+          style={{ background: '#F5C842', boxShadow: '0 4px 12px rgba(245,200,66,0.4)' }}
         >
           Start
         </button>

@@ -49,8 +49,8 @@ export default function RequestsScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />
 
-        <div className="scrollable flex-1 px-5 pt-1 pb-3">
-          <h1 className="text-brand-accent text-3xl font-black mb-5">Venne anmodninger</h1>
+        <div className="scrollable flex-1 px-5 pt-16 pb-3">
+          <h1 className="text-brand-accent flex justify-center text-4xl font-semibold font-fredoka mb-8">Venne anmodninger</h1>
 
           <div className="flex flex-col gap-2.5">
             {state.friendRequestsList.map((req, i) => (
@@ -58,7 +58,7 @@ export default function RequestsScreen() {
                    style={{ border: `1.5px solid ${C.accent}` }}>
                 <div className="flex items-center gap-3">
                   <AvatarCircle avatarId={req.emoji} />
-                  <span className="text-white text-sm font-bold">{req.username}</span>
+                  <span className="text-brand-sub text-base font-fredoka">{req.username}</span>
                 </div>
                 <div className="flex gap-2 items-center">
                   <button

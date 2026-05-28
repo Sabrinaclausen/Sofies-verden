@@ -88,7 +88,7 @@ export default function LessonScreen() {
 
       {/* Progress bar */}
       <div className="flex items-center gap-2 px-4 pb-2 flex-shrink-0">
-        <span className="text-brand-sub text-xs font-bold whitespace-nowrap min-w-[44px]">
+        <span className="text-brand-sub text-xs font-opensans font-bold whitespace-nowrap min-w-[44px]">
           {step.level} af {totalSteps}
         </span>
         <div className="flex-1 h-1.5 bg-white/10 rounded-full">
@@ -97,7 +97,7 @@ export default function LessonScreen() {
             style={{ width: `${Math.max(pct, 4)}%` }}
           />
         </div>
-        <span className="text-brand-sub text-xs font-bold whitespace-nowrap min-w-[38px] text-right">
+        <span className="text-brand-sub text-xs font-opensans font-bold whitespace-nowrap min-w-[38px] text-right">
           {pct}%
         </span>
       </div>
@@ -120,7 +120,7 @@ export default function LessonScreen() {
           {step.bubbles.slice(0, visibleCount).map((text, i) => (
             <div
               key={i}
-              className="bg-brand-card rounded-2xl text-white text-sm font-semibold leading-relaxed px-4 py-3 opacity-65"
+              className="bg-brand-card rounded-2xl text-white text-base font-opensans leading-relaxed px-4 py-3"
               style={{ wordBreak: 'break-word' }}
             >
               {text}
@@ -130,7 +130,7 @@ export default function LessonScreen() {
           {/* Aktiv boble */}
           <div
             key={visibleCount}
-            className="bg-brand-card rounded-2xl text-white text-sm font-semibold leading-relaxed"
+            className="bg-brand-card rounded-2xl text-white text-base font-opensans leading-relaxed"
             style={{
               display: 'grid',
               animation: 'bubbleSlideUp 0.35s ease both',

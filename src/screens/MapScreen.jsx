@@ -47,11 +47,11 @@ export default function MapScreen() {
         src={mapBg}
         alt=""
         draggable={false}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+        className="absolute inset-0 w-full h-full object-cover z-0"
       />
 
       {/* Top bar — identical to chapters screen */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10 }}>
+      <div className="absolute top-0 left-0 right-0 z-10">
         <TopBar />
       </div>
 
@@ -60,7 +60,7 @@ export default function MapScreen() {
         viewBox="0 0 430 580"
         width="100%"
         height="calc(100% - 80px)"
-        style={{ display: 'block', position: 'absolute', top: 0, left: 0, zIndex: 1 }}
+        className="block absolute top-0 left-0 z-[1]"
         preserveAspectRatio="xMidYMid slice"
       >
         {/* Clip paths for rounded node images */}
@@ -119,8 +119,8 @@ export default function MapScreen() {
       >
         <button
           onClick={handleStart}
-          className="w-full py-[18px] rounded-full text-xl font-black text-[#0A2010]"
-          style={{ background: '#4ADE80', boxShadow: '0 4px 20px rgba(74,222,128,0.5)' }}
+          className="w-full py-[18px] rounded-full text-lg font-black font-opensans text-brand-dark"
+          style={{ background: '#4ADE80', boxShadow: '0 4px 20px rgba(74,222,128,0.3)' }}
         >
           Start
         </button>
