@@ -9,7 +9,7 @@ import profilHest from '../assets/profil-hest.png';
 import profilKompas from '../assets/profil-kompass.png';
 
 const AVATAR_MAP = {
-  hund: profilHund,
+  dog: profilHund,
   gingerbread: profilGingerbread,
   owl: profilOwl,
   caveboy: profilCaveman,

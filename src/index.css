@@ -15,7 +15,6 @@ html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background: #111;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
@@ -28,18 +27,17 @@ html, body {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  background: #0D0B2B;
 }
 
 button {
-  font-family: 'fredoka', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   cursor: pointer;
   border: none;
   outline: none;
 }
 
 input {
-  font-family: 'fredoka', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   outline: none;
 }
 
@@ -51,14 +49,7 @@ input {
   from { transform: translateY(0); }
   to   { transform: translateY(-110%); }
 }
-@keyframes logoEnter {
-  from { opacity: 0; transform: translateY(-20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-10px); }
-}
+
 @keyframes btnFadeIn {
   from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: translateY(0); }

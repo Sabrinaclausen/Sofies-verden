@@ -1,6 +1,5 @@
 import React from 'react';
 import { useApp } from '../AppContext';
-import hundeAvatar from '../assets/avatar-hund.png';
 import cirkelLilla from '../assets/cirkel-lilla.png';
 import stjerneBaggrund from '../assets/stjerne-baggrund.png';
 import { CharacterEmoji } from '../components/shared';
@@ -9,21 +8,21 @@ export default function StartsideScreen() {
   const { navigate, state, openCharacterSelect, updateState } = useApp();
 
   return (
-    <div style={{ 
-      backgroundImage: `url(${stjerneBaggrund})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      width: '100%',
-      height: '100%',
-      position: 'relative'
-    }}>
+    <div
+      className="w-full h-full relative"
+      style={{
+        backgroundImage: `url(${stjerneBaggrund})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
 
       <div className="flex-1 flex flex-col items-center justify-between px-8 py-12 relative">
         {/* Brand */}
         <div className="flex flex-col items-center gap-1">
-          <p className="text-white text-[13px] font-semibold tracking-[2px] opacity-80">GYLDENDAL</p>
+          <p className="text-white text-[13px] font-opensans font-semibold tracking-[2px] opacity-80 mt-16">GYLDENDAL</p>
           <div className="flex flex-col items-center leading-tight">
-            <span className="text-5xl font-black text-white tracking-[2px] font-fredoka">SOFIES</span>
+            <span className="text-5xl font-black text-brand-sub tracking-[2px] font-fredoka">SOFIES</span>
             <span className="text-5xl font-black text-brand-accent tracking-[2px] font-fredoka">VERDEN</span>
           </div>
         </div>
@@ -35,7 +34,7 @@ export default function StartsideScreen() {
     {/* Baggrundscirkel med blyant — klikker åbner character select */}
     <button
       onClick={() => openCharacterSelect('startside')}
-      style={{ background: 'none', border: 'none', padding: 0 }}
+      className="bg-transparent border-none p-0"
     >
     <img 
       src={cirkelLilla} 
@@ -44,7 +43,7 @@ export default function StartsideScreen() {
     </button>
 
     {/* Hund */}
-    <div style={{ position: 'absolute', pointerEvents: 'none' }}>
+    <div className="absolute">
       <CharacterEmoji id={state.selectedCharacter} size={130} />
     </div>
   </div>
@@ -52,7 +51,7 @@ export default function StartsideScreen() {
         {/* Play knap */}
         <button
           onClick={() => { updateState({ girlLarge: true }); navigate('chapters'); }}
-          className="w-full py-[18px] rounded-full text-xl font-black font-fredoka text-brand-dark tracking-wide"
+          className="w-full py-[18px] rounded-full text-lg font-black font-opensans text-brand-dark tracking-wide"
           style={{ background: '#F5C842', boxShadow: '0 6px 20px rgba(245,200,66,0.45)' }}
         >
           Play ▶

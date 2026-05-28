@@ -42,7 +42,7 @@ function Router() {
     ? `${state.currentScreen}-${state.currentStep}`
     : state.currentScreen;
   return (
-    <div key={key} className="screen-enter" style={{ width: '100%', height: '100%' }}>
+    <div key={key} className="screen-enter w-full h-full">
       <Screen />
     </div>
   );

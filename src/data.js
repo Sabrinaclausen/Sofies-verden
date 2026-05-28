@@ -80,6 +80,18 @@ export const QUIZ_QUESTIONS = [
     ],
     correct: 2,
   },
+
+   {
+    question: 'Hvad er den filosofiske pointe i denne del af historien?',
+    options: [
+      'Naturen er smukkere end huler',
+      'Man skal ikke sidde indenfor for længe',
+      'Lys er godt for øjnene',
+      'Den virkelige verden er sumkkere end skygger ',
+    ],
+    correct: 3,
+  },
+
   {
     question: 'Hvad siger Platon om mennesker der ikke vil lytte?',
     options: [
@@ -90,6 +102,18 @@ export const QUIZ_QUESTIONS = [
     ],
     correct: 0,
   },
+
+  {
+    question: 'Hvad kræver det ifølge Platon at søge sandheden?',
+    options: [
+      'At man er meget klog og har læst mange bøger',
+      'At man har de rigtige venner',
+      'Mod til at stille spørgsmål og tænke selv, selvom andre ikke forstår det',
+      'At man er god til matematik',
+    ],
+    correct: 2,
+  },
+
   {
     question: 'Hvad er Platons pointe med de to verdener?',
     options: [
@@ -107,26 +131,6 @@ export const QUIZ_QUESTIONS = [
       'Rejse til havet',
       'Lukke øjnene og lytte',
       'Tænke selv og stille spørgsmål frem for bare at acceptere det du ser',
-    ],
-    correct: 3,
-  },
-  {
-    question: 'Hvad kræver det ifølge Platon at søge sandheden?',
-    options: [
-      'At man er meget klog og har læst mange bøger',
-      'At man har de rigtige venner',
-      'Mod til at stille spørgsmål og tænke selv, selvom andre ikke forstår det',
-      'At man er god til matematik',
-    ],
-    correct: 2,
-  },
-  {
-    question: 'Hvad fortæller huleboernes situation os om mennesker generelt?',
-    options: [
-      'Naturen er smukkere end huler',
-      'Man skal ikke sidde indenfor for længe',
-      'Lys er godt for øjnene',
-      'Den virkelige verden er smukkere end skygger',
     ],
     correct: 3,
   },
@@ -152,13 +156,13 @@ export const CHARACTERS = [
 ];
 
 export const CHAPTERS = [
-  { id: 'cave', title: 'Vejen op fra hulens mørke', active: true, colors: ['#0D1B3E', '#1A3560', '#2D5A8E'] },
-  { id: 'akademi', title: 'Platons Akademi', active: false, colors: ['#1A3A1A', '#2D6B2D', '#3A8A3A'] },
-  { id: 'eternal', title: 'Det evige', active: false, colors: ['#3A2A0A', '#6A4A10', '#8A6A20'] },
-  { id: 'ideas', title: 'Ideernes verden', active: false, colors: ['#0A2A3A', '#1A4A6A', '#2A6A8A'] },
-  { id: 'soul', title: 'En udødelig sjæl', active: false, colors: ['#2A0A3A', '#4A1A6A', '#6A2A8A'] },
-  { id: 'knowledge', title: 'Sikker viden', active: false, colors: ['#1A2A0A', '#2A4A10', '#3A6A20'] },
-  { id: 'state', title: 'Filosofistaten', active: false, colors: ['#2A1A0A', '#4A2A10', '#6A3A20'] },
+  { id: 'cave', title: 'Vejen op fra hulens mørke', active: true },
+  { id: 'akademi', title: 'Platons Akademi', active: false },
+  { id: 'eternal', title: 'Det evige', active: false },
+  { id: 'ideas', title: 'Ideernes verden', active: false },
+  { id: 'soul', title: 'En udødelig sjæl', active: false },
+  { id: 'knowledge', title: 'Sikker viden', active: false },
+  { id: 'state', title: 'Filosofistaten', active: false },
 ];
 
 export const SCOREBOARD = [
@@ -175,8 +179,3 @@ export const INVITE_USERS = [
   { username: 'NoobSlayer2000', emoji: 'compass' },
 ];
 
-export const FRIEND_REQUESTS_DATA = [
-  { username: 'PizzaLover_Max', emoji: 'owl' },
-  { username: 'LegendaryHero77', emoji: 'horse' },
-  { username: 'SkateKing_Noah', emoji: 'hund' },
-];

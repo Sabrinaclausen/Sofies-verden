@@ -36,11 +36,11 @@ export default function VennerScreen() {
       <div className="flex-1 flex flex-col overflow-hidden">
         <TopBar />
 
-        <div className="scrollable flex-1 px-5 pt-5 pb-3">
-          <h1 className="text-brand-accent text-4xl font-black font-fredoka mb-4">Venner</h1>
+        <div className="scrollable flex-1 px-5 pt-12 pb-3">
+          <h1 className="text-brand-accent flex justify-center text-5xl font-semibold font-fredoka mb-4">Venner</h1>
 
           {/* Tabs */}
-          <div className="flex gap-5 mb-5">
+          <div className="flex gap-5 mb-6 mt-6">
             <button className="flex-1 py-2 rounded-xl text-brand-dark text-base font-opensans relative overflow-hidden flex flex-col items-center justify-center"
               style={{ background: C.accent }}>
               <img src={friend} alt="" className="h-14 w-14 object-contain" />
@@ -48,7 +48,8 @@ export default function VennerScreen() {
             </button>
             <button
               onClick={() => navigate('inviter')}
-              className="flex-1 py-2 rounded-xl text-brand-sub text-base font-opensans bg-brand-navy border relative overflow-hidden flex flex-col items-center justify-center"
+              className="flex-1 py-2 rounded-xl text-brand-sub text-base font-opensans bg-brand-navy relative overflow-hidden flex flex-col items-center justify-center "
+              style={{ border: '2px solid #F5C842' }}
             >
               <img src={addFriend} alt="" className="h-14 w-14 object-contain" />
               <span className="relative z-10 -mt-2">Inviter venner</span>
@@ -62,9 +63,9 @@ export default function VennerScreen() {
                    style={{ border: `1.5px solid ${C.accent}` }}>
                 <div className="flex items-center gap-3">
                   <AvatarCircle avatarId={f.emoji} />
-                  <span className="text-white text-sm font-bold">{f.username}</span>
+                  <span className="text-brand-sub text-base font-fredoka">{f.username}</span>
                 </div>
-                <span className="text-brand-sub text-sm font-bold">{f.xp}xp</span>
+                <span className="text-brand-sub text-base font-fredoka">{f.xp}xp</span>
               </div>
             ))}
             {state.friendsList.length === 0 && (

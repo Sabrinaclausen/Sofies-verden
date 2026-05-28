@@ -21,14 +21,14 @@ const initialState = {
   friendsList: [
     { username: 'CoolDragon99', xp: 200, emoji: 'compass' },
     { username: 'MinecraftKing7', xp: 240, emoji: 'caveboy' },
-    { username: 'NinjaKat2014', xp: 280, emoji: 'hund' },
+    { username: 'NinjaKat2014', xp: 280, emoji: 'dog' },
     { username: 'ProGamer_Luca', xp: 280, emoji: 'gingerbread' },
-    { username: 'xXDarkWolfXx', xp: 360, emoji: 'hund' },
+    { username: 'xXDarkWolfXx', xp: 360, emoji: 'dog' },
   ],
   friendRequestsList: [
     { username: 'PizzaLover_Max', emoji: 'owl' },
     { username: 'LegendaryHero77', emoji: 'horse' },
-    { username: 'SkateKing_Noah', emoji: 'hund' },
+    { username: 'SkateKing_Noah', emoji: 'dog' },
   ],
 };
 
@@ -44,16 +44,8 @@ export function AppProvider({ children }) {
   const updateState = (updates) =>
     setState((s) => ({ ...s, ...updates }));
 
-  const resetLesson = () =>
-    setState((s) => ({
-      ...s,
-      currentStep: 0,
-      quizCompleted: false,
-      sessionCorrectAnswers: 0,
-    }));
-
   return (
-    <AppContext.Provider value={{ state, navigate, updateState, resetLesson, openCharacterSelect }}>
+    <AppContext.Provider value={{ state, navigate, updateState, openCharacterSelect }}>
       {children}
     </AppContext.Provider>
   );

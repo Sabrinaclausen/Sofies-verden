@@ -17,10 +17,7 @@ export const C = {
   card: '#2D1F6E',
   accent: '#F5C842',
   green: '#22C55E',
-  text: '#FFFFFF',
   sub: '#F0EAFF',
-  navActive: '#F5C842',
-  btnInactive: '#C4BFEF',
 };
 
 export function TopBar({ rightIcon, onRight }) {
@@ -51,15 +48,15 @@ export function BottomNav({ active }) {
     { id: 'venner', label: 'Venner', icon: (a) => <PeopleIcon size={45} color={a ? '#1A1600' : '#F0EAFF'} /> },
   ];
   return (
-    <div className="flex justify-around items-center px-4 pt-2 pb-4 flex-shrink-0 ">
+    <div className="flex justify-around items-center px-4 pt-2 pb-4 flex-shrink-0">
       {items.map((item) => {
         const isActive = active === item.id;
         return (
           <button
             key={item.id}
             onClick={() => navigate(item.id)}
-            className={`flex flex-col items-center gap-1 rounded-2xl px-5 py-2 my-8 min-w-[115px] transition-all ${
-              isActive ? 'bg-brand-accent' : 'bg-white/[0.08]'
+            className={`flex flex-col items-center gap-1 rounded-2xl px-5 py-2 mb-8 min-w-[115px] transition-all ${
+              isActive ? 'bg-brand-accent' : 'bg-[#17143A]'
             }`}
             style={isActive ? {} : { border: '2px solid #F5C842' }}
           >
@@ -85,7 +82,7 @@ export function StarsWrapper({ children, style }) {
         ...style
       }}
     >
-      <div className="relative z-[1] h-full flex flex-col">
+      <div className="relative z-[1] h-full flex flex-col overflow-hidden ">
         {children}
       </div>
     </div>

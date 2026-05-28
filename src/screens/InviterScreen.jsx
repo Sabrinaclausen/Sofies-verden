@@ -58,6 +58,7 @@ export default function InviterScreen() {
             <button
               onClick={() => navigate('venner')}
               className="flex-1 py-2 rounded-xl text-brand-sub text-base font-opensans bg-brand-navy border relative overflow-hidden flex flex-col items-center justify-center"
+            style={{ border: '2px solid #F5C842' }}
             >
               <img src={friendInaktiv} alt="" className="h-14 w-14 object-contain" />
               <span className="relative z-10 -mt-2">Venner</span>
