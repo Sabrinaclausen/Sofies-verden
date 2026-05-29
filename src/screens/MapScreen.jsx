@@ -30,8 +30,8 @@ export default function MapScreen() {
   const { nodeResults } = state;
 
   const goToNode = (stepIdx) => {
-    updateState({ currentStep: stepIdx, mapQuizMode: true });
-    navigate('quiz');
+  updateState({ currentStep: stepIdx, mapQuizMode: true });
+  navigate('lesson');
   };
 
   const handleStart = () => {
